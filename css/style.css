@@ -1,0 +1,442 @@
+
+/* Estilos Generales */
+header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 5px solid #A0A7AC;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #192229;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.LogInDivRight {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.LogInDivLeft {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.LogInLogoContainer {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+  
+
+#LogInSearchIcon {
+    display: inline-block;
+    background-image: url(../images/Search.png);
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+}
+
+#LogInBackIcon {
+    display: none;
+    background-image: url(../images/Back.png);
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+    margin-left: -15px;
+}
+
+#LogInGlobeIcon {
+    display: inline-block;
+    content: "";
+    background-image: url(../images/Globe.png);
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+}
+
+#LogInLogoutLink{
+    display: inline-block;
+    color: #C8CDD0;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#LogInPublishIcon {
+    display: inline-block;
+    background-image: url(../images/Publish.png);
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+}
+
+#LogInChatIcon {
+    display: inline-block;
+    background-image: url(../images/Chat.png);
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+}
+
+#LogInLikeIcon {
+    display: inline-block;
+    background-image: url(../images/Heart.png);
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+}
+
+#LogInProfileIcon {
+    display: inline-block;
+    background-image: url(../images/User.png);
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+}
+
+#LogInHomeIcon {
+    display: inline-block;
+    background-image: url(../images/Home.png);
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+}
+
+.MobileFooter {
+    display: none;
+    position: sticky;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0px 0px 0px;
+    border-top: 5px solid #A0A7AC;
+    background-color: #212E36;
+}
+
+.MobileDiv {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+  
+#MobileSearchIcon {
+    display: inline-block;
+    content: "";
+    background-image: url(../images/Search.png);
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+}
+
+#MobilePublishIcon {
+    display: inline-block;
+    background-image: url(../images/Publish.png);
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+}
+
+#MobileChatIcon {
+    display: inline-block;
+    background-image: url(../images/Chat.png);
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+}
+
+#MobileLikeIcon {
+    display: inline-block;
+    background-image: url(../images/Heart.png);
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+}
+
+#MobileProfileIcon {
+    display: inline-block;
+    background-image: url(../images/User.png);
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+}
+
+
+.PMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1; 
+    overflow-y: auto; 
+    padding-bottom: 0px;
+}
+  
+
+/* Header Landing Page */
+.LPHDiv {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#LPGlobe {
+    display: inline-block;
+    background-image: url(../images/Globe.png);
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+}
+
+#LPLogin, #LPSignin {
+    color: #C8CDD0;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Styles for Main Page*/
+.MPUserPhoto {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: url('../images/DefaultUser.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+  }
+  
+  .MPpost {
+    background-color: #212E36;
+    border: 3px solid #A0A7AC;
+    padding: 15px;
+    width: 800px;
+  }
+  
+  .MPpost-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+
+  
+  .MPUserInfo {
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+  
+  .MPpostUser {
+    font-size: 14px;
+    margin-right: 5px;
+  }
+  
+  .MPpostUserdate {
+    font-size: 12px;
+    color: #A0A7AC;
+  }
+
+
+  .MPpost-content {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: white;
+    padding-left: 55px;
+  }
+
+  .MPpost-actions {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #52A5E0;
+    cursor: pointer;
+    padding: 0px 50px 0px 50px;
+  }
+
+
+  .MPpost-actions span {
+    cursor: pointer;
+    padding: 5px 5px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    color: #52A5E0;
+  }
+  
+  .MPpost-actions span:hover {
+    background-color: #2c3e50;
+  }
+
+
+/* Estilos responsive para móviles */
+@media (max-width: 768px) {
+
+    /* Estilos generales */
+    .LogInDivRight {
+        align-items: flex-start;
+    }
+    #LogInGlobeIcon {
+        display: none;
+    }
+    
+    #LogInLogoutLink{
+        display: none;
+    }
+    .LogInDivLeft div:not(.LogInHome) {
+        gap: 0px;
+        display: none;
+    }
+    #LogInHomeIcon {
+        background-image: url(../images/Home2.png);
+    }
+    .LogInLogoContainer {
+        padding-right: 45px;
+    }
+
+    .MobileFooter {
+        display: flex;
+
+    }
+
+    /* Estilos responsive para Landing Page */
+
+    #LPLogin, #LPSignin {
+      display: none;
+    }
+    #LPGlobe {
+      background-image: url("../images/Home2.png");
+    }
+
+
+    /* Estilos responsive para Main Page*/
+    .MPUserPhoto {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-image: url('../images/DefaultUser.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-right: 10px;
+      }
+    
+      .MPpost {
+        background-color: #212E36;
+        border: none;
+        border-bottom: 1px solid #A0A7AC;
+        padding: 3vw 5vw 0vw 15vw;
+        margin-left: 0px;
+        width: 80vw;
+      }
+      
+      .MPpost-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        margin-left: -10vw;
+      }
+      
+
+      
+      .MPUserInfo {
+        display: flex;
+        align-items: center;
+        color: white;
+      }
+      
+      .MPpostUser {
+        font-size: 14px;
+        margin-right: 5px;
+      }
+      
+      .MPpostUserdate {
+        font-size: 12px;
+        color: #A0A7AC;
+      }
+    
+
+    
+    
+    
+
+    /* Estilos responsive para Main Page Header */
+      
+      .MPpost-content {
+        font-size: 16px;
+        margin-bottom: 10px;
+        color: white;
+        padding-left: 5vw;
+      }
+      
+      .MPpost-media {
+        margin-bottom: 10px;
+        border-radius: 8px;
+        overflow: hidden;
+        display: none;
+        padding-left: 5vw;
+      }
+      
+      .MPpost-actions {
+        display: flex;
+        width: 100%;
+        margin-left: -15vw;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #52A5E0;
+        cursor: pointer;
+        padding: 0px 0px 0px 15vw;
+      }
+      
+      .icon {
+        width: 25px;
+        height: 25px;
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+      
+      .MPpost-actions span {
+        cursor: pointer;
+        padding: 5px 5px;
+        border-radius: 6px;
+        transition: background-color 0.3s;
+        color: #52A5E0;
+      }
+      
+      .MPpost-actions span:hover {
+        background-color: #2c3e50;
+      }
+
+
+
+
+    
+
+    
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  }

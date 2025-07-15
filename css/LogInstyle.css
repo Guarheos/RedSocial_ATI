@@ -1,0 +1,152 @@
+/* Header Log In*/
+/* No cambia con respecto a Landing Page*/
+
+/* Log In Body*/
+
+.LNMain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.LNMain h1 {
+    color: white;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.LNform-container {
+    background-color: #ecf0f1;
+    padding: 100px 75px 50px 75px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    width: 750px;
+    display: flex;              
+    flex-direction: column;     
+    align-items: center;
+}
+
+.LNform-container p{
+    margin: 0px;
+    align-self: flex-start;
+}
+
+.LNFInputs{
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.LNform-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #bdc3c7;
+}
+  
+.LNform-container button {
+    align-self: center;
+    width: auto;
+    padding: 30px 60px 30px 60px;
+    background-color: #52A5E0;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+  
+.LNform-container button:hover {
+    background-color: #2980b9;
+}
+
+.LNRButtons {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.LNRButtons button {
+    width: 300px;
+}
+
+.LNRButtons #LNRButtonsRC {
+    width: 300px;
+    background-color: transparent;
+    color: black;
+    border: 1px solid black
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+/* Estilos responsive para Log In Header */
+    /* No hay que hacer nada ya que usa las clases de Landing Page */
+
+    /* Estilos responsive para Log In Body */
+
+    .LNMain h1{
+        font-size: 35px;
+    }
+    
+    .LNform-container {
+        background-color: #ecf0f1;
+        padding: 20px 45px 20px 30px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        width: 275px;
+        display: flex;              
+        flex-direction: column;     
+        align-items: center;
+    }
+    
+    .LNform-container p{
+        margin: 0px;
+        align-self: flex-start;
+    }
+    
+    .LNFInputs{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .LNform-container input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 12px;
+        border: 1px solid #bdc3c7;
+    }
+      
+    .LNform-container button {
+        align-self: center;
+        width: auto;
+        padding: 15px 30px 15px 30px;
+        background-color: #52A5E0;
+        color: white;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 40px;
+    }
+      
+    .LNform-container button:hover {
+        background-color: #2980b9;
+    }
+    
+    .LNRButtons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .LNRButtons button {
+        width: 150px !important;
+    }
+    
+    .LNRButtons #LNRButtonsRC {
+        background-color: transparent;
+        color: black;
+        border: 1px solid black
+    }
+}

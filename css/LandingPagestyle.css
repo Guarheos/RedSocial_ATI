@@ -1,0 +1,135 @@
+/* Body Landing Page */
+
+.LPmain-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 175px;
+    gap: 40px;
+}
+  
+.LPtext-section {
+    flex: 1;
+    max-width: 50%;
+}
+  
+.LPPresentation {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+}
+
+.LPPresentation img {
+    max-width: 250px;     
+    height: auto;        
+    object-fit: contain;
+}
+  
+#LPDesc {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #C8CDD0;
+    font-weight: bold;
+}
+  
+#LPSN {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #C8CDD0;
+}
+  
+#LPSNT {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #C8CDD0;}
+
+
+.LPContact {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+.LPContact img {
+    height: 48px;
+    margin-right: 20px;
+}
+
+.LPContact p {
+    color: #52A5E0;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+.LPContact a {
+    text-decoration: none;
+    font-weight: normal;
+    color: #52A5E0;
+  }
+  
+.LPimage-section {
+    flex: 1;
+    max-width: 50%;
+  }
+  
+.LPimage-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+@media (max-width: 768px) {
+    /* Estilos responsive para Landing Page Body */
+    .LPmain-container {
+        flex-direction: column-reverse;
+        padding: 10px;
+      }
+  
+      .LPimage-section {
+          max-width: 100%;
+      }
+  
+      .LPtext-section {
+          max-width: 100%; 
+          display: inline-block;
+          flex-direction: row;
+      }
+  
+      .LPPresentation {
+        align-items: center;
+        flex-direction: column-reverse;
+      }
+      #LPDesc {
+          font-weight: normal;
+          align-items: center;
+          display: inline-block;
+      }
+      .LPPresentation img{
+          height: 75px;
+          margin-bottom: 50px;
+      }
+      #LPSNT {
+        display: none;
+      }
+      #LPSN {
+        font-size: 25px;
+        display: inline-block;
+        margin: 0px 20px 0px 10px;
+      }
+      .LPContact {
+        display: inline-block;
+      }
+      .LPContact img {
+        height: 40px;
+        margin-right: 5px;
+      }
+      .LPContact p {
+        display: inline-block;
+        font-size: 16px;
+      }
+      .LPimage-section img {
+        margin-top: 20px;
+      }
+    }
