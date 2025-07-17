@@ -20,5 +20,5 @@ from chati.views import hello_world, index
 import chati.urls
 
 urlpatterns = [
-    path('chati/', include('chati.urls'))  # Add this line
+    path('', include('chati.urls'))  # Add this line
 ]
