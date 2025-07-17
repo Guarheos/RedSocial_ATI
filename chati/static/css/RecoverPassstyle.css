@@ -1,0 +1,122 @@
+/* Header Recover Pass*/
+/* No cambia con respecto a Landing Page*/
+
+/* Recover Pass Body */
+
+.RPMain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.RPMain h1 {
+    color: white;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.RPform-container {
+    background-color: #ecf0f1;
+    padding: 100px 75px 50px 75px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    width: 750px;
+    display: flex;              
+    flex-direction: column;     
+    align-items: center;
+}
+
+.RPform-container p{
+    margin: 0px;
+    align-self: flex-start;
+}
+
+.RPFInputs{
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.RPform-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #bdc3c7;
+}
+  
+.RPform-container button {
+    align-self: center;
+    width: auto;
+    padding: 30px 150px 30px 150px;
+    background-color: #52A5E0;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+  
+.RPform-container button:hover {
+    background-color: #2980b9;
+}
+
+
+/* Estilos responsive para Recover Pass Header */
+    /* No hay que hacer nada ya que usa las clases de Landing Page */
+
+    /* Estilos responsive para Recover Pass Body */
+
+    .RPMain{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .RPMain h1 {
+        color: #C8CDD0;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    
+    .RPform-container {
+        background-color: #ecf0f1;
+        padding: 20px 45px 20px 30px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        width: 250px;
+        display: flex;              
+        flex-direction: column;     
+        align-items: center;
+    }
+    
+    .RPform-container p{
+        margin: 0px;
+        align-self: flex-start;
+    }
+    
+    .RPFInputs{
+        width: 100%;
+        margin-bottom: 100px;
+    }
+    
+    .RPform-container input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 12px;
+        border: 1px solid #bdc3c7;
+    }
+      
+    .RPform-container button {
+        align-self: center;
+        width: auto;
+        padding: 15px 45px 15px 45px;
+        background-color: #52A5E0;
+        color: white;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 40px;
+    }
+      
+    .RPform-container button:hover {
+        background-color: #2980b9;
+    }

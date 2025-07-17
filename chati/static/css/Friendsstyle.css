@@ -1,0 +1,21 @@
+/* Header Friends*/
+/* Cambia lo siguiente*/
+
+#FrMainTitle {
+    margin: 0px 0px 0px 0px;
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+}
+/* Body Friends */
+
+
+/* Estilos responsive para móviles */
+@media (max-width: 768px) {
+    #FrMainTitle {
+        margin: 0px 20px 0px 0px;
+        font-size: 35px;
+        font-weight: bold;
+        color: white;
+    }
+}

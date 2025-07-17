@@ -1,0 +1,117 @@
+
+/* Header Sign In*/
+/* No cambia con respecto a Landing Page*/
+
+/* Body Sign In */
+
+.SNMain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.SNMain h1 {
+    color: #C8CDD0;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.SNform-container {
+    background-color: #ecf0f1;
+    padding: 20px 75px 50px 75px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    width: 750px;
+    display: flex;              
+    flex-direction: column;     
+    align-items: center;
+}
+
+.SNform-container p{
+    margin: 0px;
+    align-self: flex-start;
+}
+
+.SNFInputs{
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.SNform-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #bdc3c7;
+}
+  
+.SNform-container button {
+    align-self: center;
+    width: auto;
+    padding: 30px 60px 30px 60px;
+    background-color: #52A5E0;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+  
+  .SNform-container button:hover {
+    background-color: #2980b9;
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+/* Estilos responsive para Sign In Header */
+    /* No hay que hacer nada ya que usa las clases de Landing Page */
+
+    /* Estilos responsive para Sign In Body */
+
+
+    .SNform-container {
+        background-color: #ecf0f1;
+        padding: 20px 45px 20px 30px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        width: 250px;
+        display: flex;              
+        flex-direction: column;     
+        align-items: center;
+    }
+
+    .SNform-container p{
+        margin: 0px;
+        align-self: flex-start;
+    }
+
+    .SNFInputs{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .SNform-container input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 12px;
+        border: 1px solid #bdc3c7;
+    }
+    
+    .SNform-container button {
+        align-self: center;
+        width: auto;
+        padding: 15px 30px 15px 30px;
+        background-color: #52A5E0;
+        color: white;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+
+
+
+
+}
