@@ -124,18 +124,19 @@ body{
 }
 
 .MobileDiv {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  width:100%;
 }
-  
-#MobileSearchIcon {
-    display: inline-block;
-    content: "";
-    background-image: url(../images/Search.png);
-    width: 35px;
-    height: 35px;
-    background-size: cover;
+
+#MobileHomeIcon {
+  display: inline-block;
+  background-image: url("../images/Home.png");
+  width: 35px;
+  height: 35px;
+  background-size: cover;
 }
 
 #MobilePublishIcon {
