@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>chATI - Red Social para Estudiantes</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/ChatRequestsstyle.css">
-
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/MainPagestyle.css">
 </head>
 <body>
     <header>
@@ -21,8 +20,8 @@
                 <a href="#" id="LogInLogoutLink">CERRAR SESIÓN</a>
             </div>
         </div>
-        <div class="LogInRequestMainTitleContainer">
-            <h1 id="RequestsMainTitle"> Solicitudes </h1>
+        <div class="LogInLogoContainer">
+            <img src="../images/Logo.png" alt="Logo de chATI" id="LPLogo">
         </div>
         <div class="LogInDivLeft">
             <div class="LogInPublish">
@@ -44,20 +43,32 @@
     </header>
 
     <main class="PMain">
-        <div id="MPfeed">   
+        <div id="MPfeed">
           <div class="MPpost">
             <div class="MPpost-header">
               <div class="MPUserPhoto"></div>
               <div class="MPUserInfo">
-                <strong class="MPpostUser"> Usuario 2 </strong>
-                <span class="MPpostUserdate"> · Hace 20 min</span>
+                <strong class="MPpostUser"> Usuario </strong>
+                <span class="MPpostUserdate"> · May 29</span>
               </div>
             </div>
-            <p class="Chat-Requestpreview">Peticion de Chat</p>
-            <div class="RequestButtons">
-                <button id="RequestBReject">RECHAZAR</button>
-                <button id="RequestBAccept">ACEPTAR</button>
-            </div>
+      
+            <p class="MPpost-content">Lindo día!</p>
+      
+            <!-- Elemento multimedia oculto -->
+            <div class="MPpost-media"></div>
+      
+            <div class="MPpost-actions">
+                <span class="comments">
+                  <img src="../images/Chat.png" alt="Comentarios" class="icon"> <span class="count" id="commentCount">2</span>
+                </span>
+                <span class="likes" id="likeBtn">
+                  <img src="../images/Heart.png" alt="Me gusta" class="icon"> <span class="count" id="likeCount">2</span>
+                </span>
+                <span class="share" id="shareBtn">
+                  <img src="../images/Share.png" alt="Compartir" class="icon"> <span class="count" id="shareCount">0</span>
+                </span>
+              </div>
           </div>
         </div>
       </main>

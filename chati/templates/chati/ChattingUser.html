@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>chATI - Red Social para Estudiantes</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/Friendsstyle.css">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/ChattingUserstyle.css">
 </head>
 <body>
     <header>
@@ -20,8 +20,9 @@
                 <a href="#" id="LogInLogoutLink">CERRAR SESIÓN</a>
             </div>
         </div>
-        <div class="LogInFrMainTitleContainer">
-            <h1 id="FrMainTitle"> Amigos</h1>
+        <div class="LogInChatUserContainer">
+            <div class="MPUserPhoto"></div>
+            <strong class="ChatUserName"> Usuario 2 </strong>
         </div>
         <div class="LogInDivLeft">
             <div class="LogInPublish">
@@ -42,18 +43,31 @@
         </div>
     </header>
 
-    <main class="PMain">
-        <div id="MPfeed">
-          <div class="MPpost">
-            <div class="MPpost-header">
-              <div class="MPUserPhoto"></div>
-              <div class="MPUserInfo">
-                <strong class="MPpostUser"> Usuario 2 </strong>
+    <main class="ChatMain">
+        <section class="ChatBox">
+          <div class="ChatMessages">
+            <div class="Message from-other">Hola, ¿cómo estás?</div>
+            <div class="Message from-user">¡Todo bien! ¿Y tú?</div>
+          </div>
+      
+          <div class="ChatInput">
+            <textarea placeholder="Mensaje..."></textarea>
+      
+            <div class="ChatActions">
+              <div class="ChatTools">
+                <button class="EmojiBtn" title="Emoji"></button>
+                <button class="CameraBtn" title="Cámara"></button>
+                <button class="FileBtn" title="Archivo"></button>
               </div>
+              <button class="SendBtn" title="Enviar"></button>
             </div>
           </div>
-        </div>
+        </section>
       </main>
+      
+      
+      
+      
     <footer class="MobileFooter">
         <div class="MobileDiv">
             <div class="MobileSearch">

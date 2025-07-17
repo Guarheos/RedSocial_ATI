@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>chATI - Red Social para Estudiantes</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/Notificationsstyle.css">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/ChatRequestsstyle.css">
+
 </head>
 <body>
     <header>
@@ -20,8 +21,8 @@
                 <a href="#" id="LogInLogoutLink">CERRAR SESIÓN</a>
             </div>
         </div>
-        <div class="LogInNotifMainTitleContainer">
-            <h1 id="NotifMainTitle"> Notificaciones </h1>
+        <div class="LogInRequestMainTitleContainer">
+            <h1 id="RequestsMainTitle"> Solicitudes </h1>
         </div>
         <div class="LogInDivLeft">
             <div class="LogInPublish">
@@ -43,16 +44,20 @@
     </header>
 
     <main class="PMain">
-        <div id="MPfeed">
+        <div id="MPfeed">   
           <div class="MPpost">
             <div class="MPpost-header">
               <div class="MPUserPhoto"></div>
               <div class="MPUserInfo">
-                <strong class="MPpostUser"> Usuario 3 </strong>
-                <span class="MPpostUserdate"> · May 29</span>
+                <strong class="MPpostUser"> Usuario 2 </strong>
+                <span class="MPpostUserdate"> · Hace 20 min</span>
               </div>
             </div>
-            <p class="Chat-Notifcontent">Comento tu publicacion</p>
+            <p class="Chat-Requestpreview">Peticion de Chat</p>
+            <div class="RequestButtons">
+                <button id="RequestBReject">RECHAZAR</button>
+                <button id="RequestBAccept">ACEPTAR</button>
+            </div>
           </div>
         </div>
       </main>

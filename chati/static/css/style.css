@@ -40,7 +40,7 @@ body{
 
 #LogInSearchIcon {
     display: inline-block;
-    background-image: url(../images/Search.png);
+    background-image: url(../../../images/Search.png);
     width: 35px;
     height: 35px;
     background-size: cover;

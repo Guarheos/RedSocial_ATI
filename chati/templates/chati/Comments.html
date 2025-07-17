@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>chATI - Red Social para Estudiantes</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/Publicationstyle.css">
-
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/Commentsstyle.css">
 </head>
 <body>
     <header>
@@ -43,32 +42,54 @@
         </div>
     </header>
 
-    <main class="PubMain">
-        <section class="PubBox">
-            <div class="PubPreview" id="PubPreview">
-                <!-- El preview multimedia aparece aquí si se sube algo -->
-                <span class="PubPreviewPlaceholder">Vista previa de la publicación...</span>
+    <main class="PMain">
+        <div id="MPfeed">
+          <div class="MPpost">
+            <div class="MPpost-header">
+              <div class="MPUserPhoto"></div>
+              <div class="MPUserInfo">
+                <strong class="MPpostUser"> Usuario </strong>
+                <span class="MPpostUserdate"> · May 29</span>
               </div>
-          <div class="PubTop">
-            <div class="MPUserPhoto"></div>
-            <textarea 
-              placeholder="¿Qué deseas publicar?" 
-              class="PubTextarea" 
-              rows="3"></textarea>
-            <button class="PubSend">Publicar</button>
-          </div>
+            </div>
       
-
-      
-          <div class="PubTools">
-            <button class="PubBtnEmoji" title="Agregar Emoji"></button>
-            <button class="PubBtnPhoto" title="Subir Imagen"></button>
-            <button class="PubBtnFile" title="Adjuntar Archivo"></button>
+            <p class="MPpost-content">Lindo día!</p>
+            <div class="MPpost-actions">
+                <span class="comments">
+                  <img src="../images/Chat.png" alt="Comentarios" class="icon"> <span class="count" id="commentCount">2</span>
+                </span>
+                <span class="likes" id="likeBtn">
+                  <img src="../images/Heart.png" alt="Me gusta" class="icon"> <span class="count" id="likeCount">2</span>
+                </span>
+                <span class="share" id="shareBtn">
+                  <img src="../images/Share.png" alt="Compartir" class="icon"> <span class="count" id="shareCount">0</span>
+                </span>
+              </div>
           </div>
-        </section>
+          <section class="comment-input">
+            <div class="comment-header">
+                <div class="MPUserPhoto"></div>
+                <div class="input-area">
+                    <textarea 
+                    placeholder="Escribe tu comentario..." 
+                    class="comment-box" 
+                    rows="1">
+                    </textarea>
+                </div>
+                <button type="submit" class="send-btn">Enviar</button>
+            </div>
+              <div class="tools">
+                <button class="tool-btn-emoji" title="Emoji"></button>
+                <button class="tool-btn-photo" title="Foto"></button>
+                <button class="tool-btn-file" title="Archivo"></button>
+              </div>
+            </div>
+            
+          </section>
+          
+          
+        </div>
       </main>
-      
-      
     <footer class="MobileFooter">
         <div class="MobileDiv">
             <div class="MobileSearch">
