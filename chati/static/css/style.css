@@ -40,7 +40,7 @@ body{
 
 #LogInSearchIcon {
     display: inline-block;
-    background-image: url(../../../images/Search.png);
+    background-image: url("/static/images/Search.png");
     width: 35px;
     height: 35px;
     background-size: cover;
@@ -48,7 +48,7 @@ body{
 
 #LogInBackIcon {
     display: none;
-    background-image: url(../images/Back.png);
+    background-image: url("/static/images/Back.png");
     width: 35px;
     height: 35px;
     background-size: cover;
@@ -58,7 +58,7 @@ body{
 #LogInGlobeIcon {
     display: inline-block;
     content: "";
-    background-image: url(../images/Globe.png);
+    background-image: url("/static/images/Globe.png");
     width: 35px;
     height: 35px;
     background-size: cover;
@@ -75,7 +75,7 @@ body{
 
 #LogInPublishIcon {
     display: inline-block;
-    background-image: url(../images/Publish.png);
+    background-image: url("/static/images/Publish.png");
     width: 35px;
     height: 35px;
     background-size: cover;
@@ -83,7 +83,7 @@ body{
 
 #LogInChatIcon {
     display: inline-block;
-    background-image: url(../images/Chat.png);
+    background-image: url("/static/images/Chat.png");
     width: 35px;
     height: 35px;
     background-size: cover;
@@ -91,7 +91,7 @@ body{
 
 #LogInLikeIcon {
     display: inline-block;
-    background-image: url(../images/Heart.png);
+    background-image: url("/static/images/Heart.png");
     width: 35px;
     height: 35px;
     background-size: cover;
@@ -99,7 +99,7 @@ body{
 
 #LogInProfileIcon {
     display: inline-block;
-    background-image: url(../images/User.png);
+    background-image: url("/static/images/User.png");
     width: 35px;
     height: 35px;
     background-size: cover;
@@ -107,7 +107,7 @@ body{
 
 #LogInHomeIcon {
     display: inline-block;
-    background-image: url(../images/Home.png);
+    background-image: url("/static/images/Home.png");
     width: 35px;
     height: 35px;
     background-size: cover;
@@ -125,14 +125,15 @@ body{
 
 .MobileDiv {
     display: flex;
+    justify-content: space-between;
     gap: 20px;
     align-items: center;
+    width:100%;
 }
   
-#MobileSearchIcon {
+#MobileHomeIcon {
     display: inline-block;
-    content: "";
-    background-image: url(../images/Search.png);
+    background-image: url("/static/images/Home.png");
     width: 35px;
     height: 35px;
     background-size: cover;
@@ -140,7 +141,7 @@ body{
 
 #MobilePublishIcon {
     display: inline-block;
-    background-image: url(../images/Publish.png);
+    background-image: url("/static/images/Publish.png");
     width: 35px;
     height: 35px;
     background-size: cover;
@@ -148,7 +149,7 @@ body{
 
 #MobileChatIcon {
     display: inline-block;
-    background-image: url(../images/Chat.png);
+    background-image: url("/static/images/Chat.png");
     width: 35px;
     height: 35px;
     background-size: cover;
@@ -156,7 +157,7 @@ body{
 
 #MobileLikeIcon {
     display: inline-block;
-    background-image: url(../images/Heart.png);
+    background-image: url("/static/images/Heart.png");
     width: 35px;
     height: 35px;
     background-size: cover;
@@ -164,7 +165,7 @@ body{
 
 #MobileProfileIcon {
     display: inline-block;
-    background-image: url(../images/User.png);
+    background-image: url("/static/images/User.png");
     width: 35px;
     height: 35px;
     background-size: cover;
@@ -190,7 +191,7 @@ body{
 
 #LPGlobe {
     display: inline-block;
-    background-image: url(../images/Globe.png);
+    background-image: url("/static/images/Globe.png");
     width: 40px;
     height: 40px;
     background-size: cover;
@@ -278,6 +279,17 @@ body{
   }
 
 
+  
+  .icon {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  
+
+
+
 /* Estilos responsive para móviles */
 @media (max-width: 768px) {
 
@@ -297,7 +309,7 @@ body{
         display: none;
     }
     #LogInHomeIcon {
-        background-image: url(../images/Home2.png);
+        background-image: url("/static/images/Home2.png");
     }
     .LogInLogoContainer {
         padding-right: 45px;
@@ -314,7 +326,7 @@ body{
       display: none;
     }
     #LPGlobe {
-      background-image: url("../images/Home2.png");
+      background-image: url("/static/images/Home2.png");
     }
 
 
@@ -323,7 +335,7 @@ body{
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        background-image: url('../images/DefaultUser.png');
+        background-image: url('/static/images/DefaultUser.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;

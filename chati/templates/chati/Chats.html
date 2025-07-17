@@ -1,11 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>chATI - Red Social para Estudiantes</title>
-    <link rel="stylesheet" href="../../static/css/style.css">
-    <link rel="stylesheet" href="../../static/css/Chatsstyle.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Chatsstyle.css' %}">
 
 </head>
 <body>
@@ -60,17 +61,16 @@
           </div>
         </div>
       </main>
-    <footer class="MobileFooter">
+      <footer class="MobileFooter">
         <div class="MobileDiv">
-            <div class="MobileSearch">
-                <a href="#" id="MobileSearchIcon"></a>
-            </div>
-            </div>
-            <div class="MobilePublish">
-                <a href="#" id="MobilePublishIcon"></a>
+            <div class="MobileHome">
+                <a href="#" id="MobileHomeIcon"></a>
             </div>
             <div class="MobileChat">
                 <a href="#" id="MobileChatIcon"></a>
+            </div>
+            <div class="MobilePublish">
+                <a href="#" id="MobilePublishIcon"></a>
             </div>
             <div class="MobileLike">
                 <a href="#" id="MobileLikeIcon"></a>

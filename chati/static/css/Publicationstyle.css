@@ -102,13 +102,13 @@
   }
   
   .PubBtnEmoji {
-    background-image: url('../images/Smile.png');
+    background-image: url('/static/images/Smile.png');
   }
   .PubBtnPhoto {
-    background-image: url('../images/Camera.png');
+    background-image: url('/static/images/Camera.png');
   }
   .PubBtnFile {
-    background-image: url('../images/Paperclip.png');
+    background-image: url('/static/images/Paperclip.png');
   }
   
   
@@ -227,13 +227,13 @@
   }
   
   .PubBtnEmoji {
-    background-image: url('../images/Smile.png');
+    background-image: url('/static/images/Smile.png');
   }
   .PubBtnPhoto {
-    background-image: url('../images/Camera.png');
+    background-image: url('/static/images/Camera.png');
   }
   .PubBtnFile {
-    background-image: url('../images/Paperclip.png');
+    background-image: url('/static/images/Paperclip.png');
   }
 
 

@@ -93,16 +93,16 @@
   }
   
   .EmojiBtn {
-    background-image: url('../images/Smile.png');
+    background-image: url('/static/images/Smile.png');
   }
   .CameraBtn {
-    background-image: url('../images/Camera.png');
+    background-image: url('/static/images/Camera.png');
   }
   .FileBtn {
-    background-image: url('../images/Paperclip.png');
+    background-image: url('/static/images/Paperclip.png');
   }
   .SendBtn {
-    background-image: url('../images/Send.png');
+    background-image: url('/static/images/Send.png');
   }
   
   .LogInChatUserContainer {
@@ -217,16 +217,16 @@
       }
       
       .EmojiBtn {
-        background-image: url('../images/Smile.png');
+        background-image: url('/static/images/Smile.png');
       }
       .CameraBtn {
-        background-image: url('../images/Camera.png');
+        background-image: url('/static/images/Camera.png');
       }
       .FileBtn {
-        background-image: url('../images/Paperclip.png');
+        background-image: url('/static/images/Paperclip.png');
       }
       .SendBtn {
-        background-image: url('../images/Send.png');
+        background-image: url('/static/images/Send.png');
       }
       
       .LogInChatUserContainer {

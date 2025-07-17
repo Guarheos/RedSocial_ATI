@@ -59,6 +59,7 @@
     background-color: #2980b9;
 }
 
+@media (max-width: 768px) {
 
 /* Estilos responsive para Recover Pass Header */
     /* No hay que hacer nada ya que usa las clases de Landing Page */
@@ -120,3 +121,4 @@
     .RPform-container button:hover {
         background-color: #2980b9;
     }
+}

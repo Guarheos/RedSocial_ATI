@@ -9,7 +9,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('../images/DefaultHeader.png');
+    background-image: url('/static/images/DefaultHeader.png');
     border-bottom: 2px solid #A0A7AC;
     z-index: 1;
     position: relative;
@@ -39,7 +39,7 @@
 }
   
   .PUavatar {
-    background-image: url('../images/DefaultUser.png');
+    background-image: url('/static/images/DefaultUser.png');
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -94,7 +94,7 @@
   }
    .PUMessage {
     background-color: white;
-    background-image: url('../images/Send.png');
+    background-image: url('/static/images/Send.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -151,7 +151,7 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-image: url('../images/DefaultUser.png');
+    background-image: url('/static/images/DefaultUser.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -198,13 +198,6 @@
     padding: 0px 50px 0px 50px;
   }
   
-  .icon {
-    width: 25px;
-    height: 25px;
-    vertical-align: middle;
-    margin-right: 5px;
-  }
-  
   .PUpost-actions span {
     cursor: pointer;
     padding: 5px 5px;
@@ -248,7 +241,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('../images/DefaultHeader.png');
+    background-image: url('/static/images/DefaultHeader.png');
     border-bottom: 1px solid #A0A7AC;
     z-index: 1;
     position: relative;
@@ -280,7 +273,7 @@
 }
   
   .PUavatar {
-    background-image: url('../images/DefaultUser.png');
+    background-image: url('/static/images/DefaultUser.png');
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -335,7 +328,7 @@
   }
    .PUMessage {
     background-color: white;
-    background-image: url('../images/Send.png');
+    background-image: url('/static/images/Send.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -393,7 +386,7 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-image: url('../images/DefaultUser.png');
+    background-image: url('/static/images/DefaultUser.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

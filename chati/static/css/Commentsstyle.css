@@ -83,11 +83,11 @@
   }
   
   .tool-btn-emoji {
-    background-image: url('../images/Smile.png');
+    background-image: url('/static/images/Smile.png');
   }
   .tool-btn-photo {
-    background-image: url('../images/Camera.png');
+    background-image: url('/static/images/Camera.png');
   }
   .tool-btn-file {
-    background-image: url('../images/Paperclip.png');
+    background-image: url('/static/images/Paperclip.png');
   }
