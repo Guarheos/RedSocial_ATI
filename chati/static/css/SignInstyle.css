@@ -1,50 +1,46 @@
+/* Header Sing In*/
+/* No cambia con respecto a Landing Page*/
 
+/* Log In Body*/
 
 .SNMain{
     display: flex;
-    justify-content: center; /* Centra verticalmente */
-    align-items: center;   /* Centra horizontalmente */
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    flex-grow: 1; /* Se asegura de que ocupe todo el alto disponible */
-    padding: 20px; /* Añade un poco de espacio por si el contenido es muy grande */
-}
-
-#LPLogo {
-    width: 100px; /* Ajusta este valor al tamaño que desees */
-    height: auto; /* 'auto' mantiene la proporción para que no se deforme */
+    flex-grow: 1; 
+    padding: 20px;
 }
 
 .SNMain h1 {
     color: #ffffff;
-    font-size: 36px; /* Un poco más pequeño para mejor balance */
+    font-size: 36px;
     margin-bottom: 25px;
 }
 
 .SNform-container {
-    background-color: #ffffff; /* Un blanco más nítido resalta mejor */
-    padding: 40px; /* Padding interno ajustado */
+    background-color: #ffffff;
+    padding: 40px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.25);
-    /* MODIFICADO: Más pequeño y con ancho máximo para que sea responsivo */
     max-width: 450px;
-    width: 90%; /* Ocupará el 90% del ancho, hasta un máximo de 450px */
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* AÑADIDO: Esquinas redondeadas ✨ */
     border-radius: 16px;
 }
 
 .SNform-container p {
-    margin: 0 0 8px 0; /* Margen inferior para separar del input */
+    margin: 0 0 8px 0;
     align-self: flex-start;
-    color: #333; /* Un gris oscuro es más legible sobre blanco */
-    font-weight: 600; /* Un poco más grueso */
+    color: #333;
+    font-weight: 600;
     font-size: 14px;
 }
 
 .SNFInputs{
     width: 100%;
-    margin-bottom: 25px; /* Espacio entre el último input y el botón */
+    margin-bottom: 10px;
 }
 
 .SNform-container input {
@@ -52,16 +48,14 @@
     padding: 12px;
     margin-bottom: 16px;
     border: 1px solid #ccc;
-    box-sizing: border-box; /* Evita que el padding altere el ancho */
-    /* AÑADIDO: Esquinas redondeadas y fuente más grande */
+    box-sizing: border-box;
     border-radius: 8px;
     font-size: 16px;
 }
   
 .SNform-container button {
     align-self: center;
-    width: 60%; /* Ocupa todo el ancho del formulario */
-    /* MODIFICADO: Padding reducido para un botón más proporcionado */
+    width: 100%;
     padding: 15px;
     background-color: #52A5E0;
     color: white;
@@ -69,7 +63,6 @@
     font-weight: bold;
     cursor: pointer;
     font-size: 16px;
-    /* AÑADIDO: Esquinas redondeadas y una transición suave */
     border-radius: 8px;
     transition: background-color 0.3s ease;
 }
@@ -78,19 +71,7 @@
     background-color: #2980b9;
 }
 
-
-
-
-
-
-
 @media (max-width: 768px) {
-/* Estilos responsive para Sign In Header */
-    /* No hay que hacer nada ya que usa las clases de Landing Page */
-
-    /* Estilos responsive para Sign In Body */
-
-
     .SNform-container {
         background-color: #ffffff;
         padding: 30px 25px;
@@ -100,8 +81,9 @@
         flex-direction: column;     
         align-items: center;
     }
+    
     .SNMain h1 {
-        font-size: 30px; /* Título un poco más pequeño */
+        font-size: 30px;
     }
 
     .SNform-container p{
@@ -129,10 +111,5 @@
         border: none;
         font-weight: bold;
         cursor: pointer;
-    }
-    
-
-
-
-
+ }    
 }

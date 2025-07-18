@@ -3,12 +3,12 @@
 header {
     display: flex;
     justify-content: space-between;
-  box-shadow: 0 2px 4px #ffffff1a; 
+    box-shadow: 0 2px 4px #ffffff1a; 
     align-items: center;
     padding: 10px 20px;
     background-color: #12191e;
+    min-height: 40px;
 }
-
 
 body{
     margin: 0;
@@ -34,9 +34,10 @@ body{
 }
 
 .LogInLogoContainer {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
 }
   
 
@@ -116,19 +117,29 @@ body{
 }
 
 .MobileFooter {
-    display: none;
-    position: sticky;
-    justify-content: space-between;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
-    padding: 15px 0px 0px 0px;
-    border-top: 5px solid #ffffff;
-    background-color: #212E36;
+    padding: 10px 0;
+    background-color: #12191e;
+    box-shadow: 0 -2px 4px #ffffff1a; 
 }
 
 .MobileDiv {
     display: flex;
-    gap: 20px;
+    gap: 50px;
+    justify-content: center;
     align-items: center;
+    width: 100%;
+}
+
+#MobileHomeIcon {
+    display: inline-block;
+    content: "";
+    background-image: url('../images/Home.png');
+    width: 25px;
+    height: 25px;
+    background-size: cover;
 }
   
 #MobileSearchIcon {
@@ -172,7 +183,6 @@ body{
     background-size: cover;
 }
 
-
 .PMain {
     display: flex;
     flex-direction: column;
@@ -199,8 +209,8 @@ body{
 }
 
 #LPLogo {
-    width: 100px; /* Ajusta este valor al tamaño que desees */
-    height: auto; /* 'auto' mantiene la proporción para que no se deforme */
+    width: 90px;
+    justify-content: center;
 }
 
 #LPLogin, #LPSignin {
@@ -236,8 +246,6 @@ body{
     margin-bottom: 10px;
   }
   
-
-  
   .MPUserInfo {
     display: flex;
     align-items: center;
@@ -253,7 +261,6 @@ body{
     font-size: 12px;
     color: #A0A7AC;
   }
-
 
   .MPpost-content {
     font-size: 16px;
@@ -271,15 +278,14 @@ body{
     padding: 0px 50px 0px 50px;
   }
 
-
   .MPpost-actions span {
       cursor: pointer;
       padding: 5px 5px;
       border-radius: 6px;
       transition: background-color 0.3s;
       color: #52A5E0;
-      transform: scale(0.4); /* Escala general reducida */
-      font-size: 1.4em; /* Aumenta el tamaño del texto (ajusta el valor) */
+      transform: scale(0.4);
+      font-size: 1.4em; 
   }
   
   .MPpost-actions span:hover {
@@ -309,7 +315,10 @@ body{
         background-image: url(../images/Home2.png);
     }
     .LogInLogoContainer {
-        padding-right: 45px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
     }
 
     .MobileFooter {
@@ -373,13 +382,7 @@ body{
         color: #A0A7AC;
       }
     
-
-    
-    
-    
-
     /* Estilos responsive para Main Page Header */
-      
       .MPpost-content {
         font-size: 16px;
         margin-bottom: 10px;
@@ -424,7 +427,4 @@ body{
       .MPpost-actions span:hover {
         background-color: #2c3e50;
       }
-
-
-
   }
