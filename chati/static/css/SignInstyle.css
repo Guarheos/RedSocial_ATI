@@ -1,61 +1,80 @@
 
-/* Header Sign In*/
-/* No cambia con respecto a Landing Page*/
-
-/* Body Sign In */
 
 .SNMain{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center;   /* Centra horizontalmente */
     flex-direction: column;
+    flex-grow: 1; /* Se asegura de que ocupe todo el alto disponible */
+    padding: 20px; /* Añade un poco de espacio por si el contenido es muy grande */
+}
+
+#LPLogo {
+    width: 100px; /* Ajusta este valor al tamaño que desees */
+    height: auto; /* 'auto' mantiene la proporción para que no se deforme */
 }
 
 .SNMain h1 {
-    color: #C8CDD0;
-    font-size: 40px;
-    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 36px; /* Un poco más pequeño para mejor balance */
+    margin-bottom: 25px;
 }
 
 .SNform-container {
-    background-color: #ecf0f1;
-    padding: 20px 75px 50px 75px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    width: 750px;
-    display: flex;              
-    flex-direction: column;     
+    background-color: #ffffff; /* Un blanco más nítido resalta mejor */
+    padding: 40px; /* Padding interno ajustado */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    /* MODIFICADO: Más pequeño y con ancho máximo para que sea responsivo */
+    max-width: 450px;
+    width: 90%; /* Ocupará el 90% del ancho, hasta un máximo de 450px */
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    /* AÑADIDO: Esquinas redondeadas ✨ */
+    border-radius: 16px;
 }
 
-.SNform-container p{
-    margin: 0px;
+.SNform-container p {
+    margin: 0 0 8px 0; /* Margen inferior para separar del input */
     align-self: flex-start;
+    color: #333; /* Un gris oscuro es más legible sobre blanco */
+    font-weight: 600; /* Un poco más grueso */
+    font-size: 14px;
 }
 
 .SNFInputs{
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 25px; /* Espacio entre el último input y el botón */
 }
 
 .SNform-container input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 12px;
-    border: 1px solid #bdc3c7;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Evita que el padding altere el ancho */
+    /* AÑADIDO: Esquinas redondeadas y fuente más grande */
+    border-radius: 8px;
+    font-size: 16px;
 }
   
 .SNform-container button {
     align-self: center;
-    width: auto;
-    padding: 30px 60px 30px 60px;
+    width: 60%; /* Ocupa todo el ancho del formulario */
+    /* MODIFICADO: Padding reducido para un botón más proporcionado */
+    padding: 15px;
     background-color: #52A5E0;
     color: white;
     border: none;
     font-weight: bold;
     cursor: pointer;
+    font-size: 16px;
+    /* AÑADIDO: Esquinas redondeadas y una transición suave */
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
 }
   
-  .SNform-container button:hover {
+.SNform-container button:hover {
     background-color: #2980b9;
 }
 
@@ -73,13 +92,16 @@
 
 
     .SNform-container {
-        background-color: #ecf0f1;
-        padding: 20px 45px 20px 30px;
+        background-color: #ffffff;
+        padding: 30px 25px;
         box-shadow: 0 0 15px rgba(0,0,0,0.2);
         width: 250px;
         display: flex;              
         flex-direction: column;     
         align-items: center;
+    }
+    .SNMain h1 {
+        font-size: 30px; /* Título un poco más pequeño */
     }
 
     .SNform-container p{
@@ -96,7 +118,6 @@
         width: 100%;
         padding: 10px;
         margin-bottom: 12px;
-        border: 1px solid #bdc3c7;
     }
     
     .SNform-container button {
