@@ -43,16 +43,16 @@ body{
 #LogInSearchIcon {
     display: inline-block;
     background-image: url(../images/Search.png);
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-size: cover;
 }
 
 #LogInBackIcon {
     display: none;
     background-image: url(../images/Back.png);
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-size: cover;
     margin-left: -15px;
 }
@@ -61,8 +61,8 @@ body{
     display: inline-block;
     content: "";
     background-image: url(../images/Globe.png);
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-size: cover;
 }
 
@@ -78,40 +78,40 @@ body{
 #LogInPublishIcon {
     display: inline-block;
     background-image: url(../images/Publish.png);
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-size: cover;
 }
 
 #LogInChatIcon {
     display: inline-block;
     background-image: url(../images/Chat.png);
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-size: cover;
 }
 
 #LogInLikeIcon {
     display: inline-block;
     background-image: url(../images/Heart.png);
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-size: cover;
 }
 
 #LogInProfileIcon {
     display: inline-block;
     background-image: url(../images/User.png);
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-size: cover;
 }
 
 #LogInHomeIcon {
     display: inline-block;
     background-image: url(../images/Home.png);
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-size: cover;
 }
 
@@ -135,40 +135,40 @@ body{
     display: inline-block;
     content: "";
     background-image: url(../images/Search.png);
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-size: cover;
 }
 
 #MobilePublishIcon {
     display: inline-block;
     background-image: url(../images/Publish.png);
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-size: cover;
 }
 
 #MobileChatIcon {
     display: inline-block;
     background-image: url(../images/Chat.png);
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-size: cover;
 }
 
 #MobileLikeIcon {
     display: inline-block;
     background-image: url(../images/Heart.png);
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-size: cover;
 }
 
 #MobileProfileIcon {
     display: inline-block;
     background-image: url(../images/User.png);
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-size: cover;
 }
 
@@ -198,6 +198,11 @@ body{
     background-size: cover;
 }
 
+#LPLogo {
+    width: 100px; /* Ajusta este valor al tamaño que desees */
+    height: auto; /* 'auto' mantiene la proporción para que no se deforme */
+}
+
 #LPLogin, #LPSignin {
     color: #C8CDD0;
     text-decoration: none;
@@ -220,7 +225,7 @@ body{
   
   .MPpost {
     background-color: #212E36;
-    border: 3px solid #A0A7AC;
+    border: 3px solid #000000;
     padding: 15px;
     width: 800px;
   }
@@ -268,11 +273,13 @@ body{
 
 
   .MPpost-actions span {
-    cursor: pointer;
-    padding: 5px 5px;
-    border-radius: 6px;
-    transition: background-color 0.3s;
-    color: #52A5E0;
+      cursor: pointer;
+      padding: 5px 5px;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+      color: #52A5E0;
+      transform: scale(0.4); /* Escala general reducida */
+      font-size: 1.4em; /* Aumenta el tamaño del texto (ajusta el valor) */
   }
   
   .MPpost-actions span:hover {
@@ -307,7 +314,7 @@ body{
 
     .MobileFooter {
         display: flex;
-
+        justify-content: space-around;
     }
 
     /* Estilos responsive para Landing Page */
@@ -400,8 +407,8 @@ body{
       }
       
       .icon {
-        width: 25px;
-        height: 25px;
+        width: 12px;
+        height: 12px;
         vertical-align: middle;
         margin-right: 5px;
       }
