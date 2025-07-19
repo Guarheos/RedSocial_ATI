@@ -82,59 +82,71 @@
     display: none;
 }
 
+#RequestBAccept:hover {
+    background-color: #2980b9; 
+    border-color: #2980b9;
+}
+
+#RequestBReject:hover {
+    background-color: white;
+    color: black;
+    border-color: #bdc3c7;
+}
+
+
 @media (max-width: 768px) {
     .LogInDivRight, .LogInDivLeft {
-flex: 1;
-display: flex;
-align-items: center;
-}
+    flex: 1;
+    display: flex;
+    align-items: center;
+    }
 
-.LogInDivRight {
-    justify-content: flex-start;
-}
+    .LogInDivRight {
+        justify-content: flex-start;
+    }
 
-.LogInDivLeft {
-    justify-content: flex-end;
-}
+    .LogInDivLeft {
+        justify-content: flex-end;
+    }
 
-#RequestsMainTitle {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    margin: 0;
-}
+    #RequestsMainTitle {
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        margin: 0;
+    }
 
-    #MPfeed {
-    max-width: 700px;
-    width: 90%;
-    margin: 40px auto 0 auto;
-    background-color: #12191e;
-    border-radius: 8px;
-    overflow: hidden;
-}
+        #MPfeed {
+        max-width: 700px;
+        width: 90%;
+        margin: 40px auto 0 auto;
+        background-color: #12191e;
+        border-radius: 8px;
+        overflow: hidden;
+    }
 
-.Chat-Requestpreview {
-    color: #e0e0e0;
-    font-size: 15px;
-    padding-left: 50px;
-    margin-top: -15px;
-}
+    .Chat-Requestpreview {
+        color: #e0e0e0;
+        font-size: 15px;
+        padding-left: 50px;
+        margin-top: -15px;
+    }
 
-.MPpost {
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid #2a3b47;
-    background-color: transparent;
-    padding: 16px;
-    box-sizing: border-box;
-}
+    .MPpost {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #2a3b47;
+        background-color: transparent;
+        padding: 16px;
+        box-sizing: border-box;
+    }
 
-.MPUserPhoto {
-    width: 40px;
-    height: 40px;
-    margin-left: 40px;
-}
+    .MPUserPhoto {
+        width: 40px;
+        height: 40px;
+        margin-left: 40px;
+    }
 
     .RequestButtons {
         flex-direction: column;
@@ -150,5 +162,16 @@ align-items: center;
         height: 60px;
         background-color: #12191e;
         z-index: 1000;
+    }
+
+    #RequestBAccept:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    }
+
+    #RequestBReject:hover {
+        background-color: white;
+        color: black;
+        border-color: #bdc3c7;
     }
 }

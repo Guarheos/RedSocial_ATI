@@ -29,7 +29,6 @@
   margin: 0;
 }
 
-/* --- Feed General --- */
 #MPfeed {
   max-width: 700px;
   width: 90%;
@@ -39,7 +38,6 @@
   overflow: hidden;
 }
 
-/* --- Cada Post --- */
 .MPpost {
   width: 100%;
   border: none;
@@ -90,7 +88,17 @@
   font-size: 13px;
 }
 
-/* --- Texto de Notificaciones --- */
+#RequestBAccept:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    }
+
+    #RequestBReject:hover {
+        background-color: white;
+        color: black;
+        border-color: #bdc3c7;
+    }
+
 .Chat-Notifcontent,
 .Chat-Requestpreview {
   color: var(--text-main);
@@ -99,7 +107,6 @@
   margin-top: -10px;
 }
 
-/* --- Botones de Solicitud --- */
 .RequestButtons {
   display: flex;
   gap: 10px;
@@ -129,7 +136,6 @@
   color: white;
 }
 
-/* --- Footer móvil --- */
 .MobileFooter {
   display: none;
 }
@@ -202,4 +208,15 @@ align-items: center;
     background-color: var(--main-bg);
     z-index: 1000;
   }
+
+  #RequestBAccept:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    }
+
+    #RequestBReject:hover {
+        background-color: white;
+        color: black;
+        border-color: #bdc3c7;
+    }
 }

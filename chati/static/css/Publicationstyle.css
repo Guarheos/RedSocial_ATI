@@ -14,7 +14,6 @@
   font-size: 15px;
 } 
 
-/* --- Área Principal --- */
 .PubMain {
   width: 50%;
   height: calc(100vh - 95px);
@@ -36,7 +35,6 @@
   gap: 12px;
 }
 
-/* --- Área de Vista Previa --- */
 .PubPreview {
   flex: 1;
   background-color: var(--secondary-bg);
@@ -53,7 +51,6 @@
   text-align: center;
 }
 
-/* --- Sección de Publicación --- */
 .PubTop {
     display: flex;
     align-items: stretch;
@@ -73,7 +70,6 @@
     outline: none;
 }
 
-/* --- Botón Publicar --- */
 .PubSend {
     background-color: var(--accent-color);
     color: white;
@@ -126,6 +122,13 @@
 }
 .PubBtnFile {
   background-image: url('/static/images/Paperclip.png');
+}
+
+.MobileFooter {
+    display: none;
+}
+.PubTextarea:focus {
+  border: 1px solid #52A5E0;
 }
 
 .MobileFooter {
@@ -228,4 +231,3 @@
         z-index: 1000;
     }
 }
-

@@ -39,7 +39,7 @@
     background-color: var(--secondary-bg);
     margin-right: -5px;
 }
-/* Nombre de usuario en el header */
+
 .ChatUserName {
     color: white;
     font-size: 24px;
@@ -48,7 +48,6 @@
     margin: 0;
 }
 
-/* --- Contenedor Principal del Chat --- */
 .ChatMain {
   display: flex;
   flex-direction: column;
@@ -65,7 +64,6 @@
   transition: all 0.3s ease;
 }
 
-/* --- Caja de Chat (Mensajes + Input) --- */
 .ChatBox {
   flex: 1;
   display: flex;
@@ -73,7 +71,6 @@
   height: 100%;
 }
 
-/* --- Área de Mensajes --- */
 .ChatMessages {
   flex: 1;
   overflow-y: auto;
@@ -84,7 +81,6 @@
   scroll-behavior: smooth;
 }
 
-/* --- Estilo de cada Burbuja de Mensaje --- */
 .Message {
   max-width: var(--max-message-width);
   padding: 12px 18px;
@@ -96,7 +92,6 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* --- Mensaje del Usuario Actual --- */
 .from-user {
   align-self: flex-end;
   background-color: var(--accent-color);
@@ -104,7 +99,6 @@
   border-bottom-right-radius: 6px;
 }
 
-/* --- Mensaje del Otro Usuario --- */
 .from-other {
   align-self: flex-start;
   background-color: var(--main-text);
@@ -112,7 +106,6 @@
   border-bottom-left-radius: 6px;
 }
 
-/* --- Área de Entrada de Texto --- */
 .ChatInput {
   padding: 14px 20px;
   border-top: 1px solid var(--border-color);
@@ -143,7 +136,6 @@
   border: 1px solid var(--accent-color);
 }
 
-/* --- Acciones (Botones) --- */
 .ChatActions {
   display: flex;
   justify-content: space-between;
@@ -209,6 +201,7 @@
 
   .ChatInput {
     padding: 12px 16px;
+    margin-bottom: 60px;
   }
 
   .ChatTools {
@@ -221,5 +214,17 @@
   .SendBtn {
     width: 26px;
     height: 26px;
+  }
+
+  .MobileFooter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        background-color: #12191e;
+        z-index: 1000;
   }
 }

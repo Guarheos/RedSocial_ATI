@@ -15,7 +15,6 @@
     padding: 16px;
     cursor: pointer;
     transition: background-color 0.2s ease;
-    margin-top: 5px;
 }
 
 .Chat-Notifcontent {
@@ -68,7 +67,6 @@
 }
 
 @media (max-width: 768px) {
-
     .Chat-Notifcontent {
         color: #e0e0e0;
         font-size: 15px;
@@ -149,5 +147,3 @@
     margin-left: -5px;
   }
 }
-
-

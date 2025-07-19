@@ -10,7 +10,6 @@
     --text-accent: #52A5E0;
 }
 
-/* --- Contenedor Principal --- */
 #MPfeed {
     max-width: 700px;
     width: 90%;
@@ -76,7 +75,6 @@ margin-top: -10px;
     margin-bottom: 12px;
 }
 
-/* --- Sección para Escribir Comentarios --- */
 .comment-input {
     padding: 16px;
 }
@@ -132,19 +130,28 @@ margin-top: -10px;
 .tool-btn-emoji,
 .tool-btn-photo,
 .tool-btn-file {
+    width: 28px;
+    height: 28px;
+    background-color: transparent;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: transparent;
     border: none;
-    width: 24px;
-    height: 24px;
     cursor: pointer;
-    opacity: 0.7;
+    opacity: 0.8;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    filter: drop-shadow(0 0 1px var(--border-color));
 }
 
-.PubSend:hover {
-  background-color: #3d8bc3;
+.tool-btn-emoji:hover,
+.tool-btn-photo:hover,
+.tool-btn-file:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.comment-box:focus {
+  border: 1px solid #52A5E0;
 }
 
 .send-btn {
@@ -161,13 +168,6 @@ margin-top: -10px;
 
 .send-btn:hover {
   background-color: var(--hover-accent);  
-}
-
-.PubBtnEmoji:hover,
-.PubBtnPhoto:hover,
-.PubBtnFile:hover {
-  transform: scale(1.1);
-  opacity: 1;
 }
 
 .MobileFooter {

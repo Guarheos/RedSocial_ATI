@@ -1,8 +1,3 @@
-/* Header Edit Profile*/
-/* No cambia con respecto a Landing Page*/
-
-/* Body Edit Profile */
-
 #EPMainTitle {
     color: #ffffff;
     font-size: 36px;
@@ -140,7 +135,7 @@ input:checked + .EPslider::before {
         margin-bottom: 15px;
         background-color: #ffffff;
         box-shadow: 0 0 15px rgba(0,0,0,0.2);
-        width: 250px;
+        margin-bottom: 70px;
         display: flex;              
         flex-direction: column;     
         align-items: center;
@@ -150,5 +145,17 @@ input:checked + .EPslider::before {
         padding: 30px 40px;
         box-sizing: border-box;
         align-items: center;
+    }
+
+    .MobileFooter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        background-color: #12191e;
+        z-index: 1000;
     }
 }
