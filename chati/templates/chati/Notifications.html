@@ -44,19 +44,39 @@
     </header>
 
     <main class="PMain">
-        <div id="MPfeed">
-          <div class="MPpost">
-            <div class="MPpost-header">
-              <div class="MPUserPhoto"></div>
-              <div class="MPUserInfo">
-                <strong class="MPpostUser">Usuario</strong>
-                <span class="MPpostUserdate"> · Ene 01</span>
-              </div>
-            </div>
-            <p class="Chat-Notifcontent">Comento tu publicación</p>
-          </div>
+  <div id="MPfeed">
+
+    <!-- Bloque tipo solicitud de amistad -->
+    <div class="MPpost">
+      <div class="MPpost-header">
+        <div class="MPUserPhoto"></div>
+        <div class="MPUserInfo">
+          <strong class="MPpostUser"> Usuario </strong>
+          <span class="MPpostUserdate"> · Hace 1 min</span>
         </div>
-      </main>
+      </div>
+      <p class="Chat-Requestpreview">Solicitud de amistad</p>
+      <div class="RequestButtons">
+        <button id="RequestBReject">RECHAZAR</button>
+        <button id="RequestBAccept">ACEPTAR</button>
+      </div>
+    </div>
+
+    <!-- Otra notificación normal -->
+    <div class="MPpost">
+      <div class="MPpost-header">
+        <div class="MPUserPhoto"></div>
+        <div class="MPUserInfo">
+          <strong class="MPpostUser">Usuario</strong>
+          <span class="MPpostUserdate"> · Ene 01</span>
+        </div>
+      </div>
+      <p class="Chat-Notifcontent">Comentó tu publicación</p>
+    </div>
+
+  </div>
+</main>
+
       
       <footer class="MobileFooter">
         <div class="MobileDiv">

@@ -1,67 +1,137 @@
-/* Header Notifications*/
+:root {
+  --main-bg: #12191e;
+  --main-hover: #212E36;
+  --text-main: #e0e0e0;
+  --accent: #52A5E0;
+  --border: #2a3b47;
+  --font-size: 15px;
+}
 
+/* --- Header --- */
 .LogInDivRight, .LogInDivLeft {
-    flex: 1;
-    display: flex;
-    align-items: center;
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
-.LogInDivRight {
-    justify-content: flex-start;
+.LogInDivRight { justify-content: flex-start; }
+.LogInDivLeft { justify-content: flex-end; }
+
+#NotifMainTitle, #RequestsMainTitle {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
 }
 
-.LogInDivLeft {
-    justify-content: flex-end;
-}
-
-#NotifMainTitle {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    margin: 0;
-}
-
+/* --- Feed General --- */
 #MPfeed {
-    max-width: 700px;
-    width: 90%;
-    margin: 40px auto 0 auto;
-    background-color: #12191e;
-    border-radius: 8px;
-    overflow: hidden;
+  max-width: 700px;
+  width: 90%;
+  margin: 40px auto 0 auto;
+  background-color: var(--main-bg);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
+/* --- Cada Post --- */
 .MPpost {
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid #2a3b47;
-    background-color: transparent;
-    padding: 16px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  background-color: transparent;
+  padding: 16px;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
 }
 
 .MPpost:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .MPpost:hover {
-    background-color: #212E36;
+  background-color: var(--main-hover);
 }
 
-.Chat-Notifcontent {
-    color: #e0e0e0;
-    font-size: 15px;
-    padding-left: 60px;
-    margin-top: -15px;
+.MPpost-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
+.MPUserPhoto {
+  width: 40px;
+  height: 40px;
+  background-color: #3b4f63;
+  border-radius: 50%;
+}
+
+.MPUserInfo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+
+.MPpostUser {
+  color: white;
+  font-weight: bold;
+  margin-left: -10px;
+}
+
+.MPpostUserdate {
+  color: #999;
+  font-size: 13px;
+}
+
+/* --- Texto de Notificaciones --- */
+.Chat-Notifcontent,
+.Chat-Requestpreview {
+  color: var(--text-main);
+  font-size: var(--font-size);
+  padding-left: 52px;
+  margin-top: -10px;
+}
+
+/* --- Botones de Solicitud --- */
+.RequestButtons {
+  display: flex;
+  gap: 10px;
+  padding: 10px 52px 0 52px;
+}
+
+#RequestBAccept, #RequestBReject {
+  flex: 1;
+  width: auto;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#RequestBAccept {
+  background-color: var(--accent);
+  border: 1px solid var(--accent);
+  color: white;
+}
+
+#RequestBReject {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+/* --- Footer móvil --- */
 .MobileFooter {
-    display: none;
+  display: none;
 }
 
 @media (max-width: 768px) {
-.LogInDivRight, .LogInDivLeft {
+  .LogInDivRight, .LogInDivLeft {
 flex: 1;
 display: flex;
 align-items: center;
@@ -83,12 +153,10 @@ align-items: center;
     margin: 0;
 }
 
-.Chat-Notifcontent {
-    color: #e0e0e0;
-    font-size: 15px;
-    padding-left: 50px;
-    margin-top: -20px;
-    margin-left: 10px;
+.MPUserPhoto {
+    width: 40px;
+    height: 40px;
+    margin-left: 50px;
 }
 
 .MPpost {
@@ -101,21 +169,33 @@ align-items: center;
     width: 100%;
 }
 
-.MPUserPhoto {
-    width: 40px;
-    height: 40px;
-    margin-left: 50px;
-}
+  .Chat-Notifcontent,
+  .Chat-Requestpreview {
+    color: #e0e0e0;
+    font-size: 15px;
+    padding-left: 50px;
+    margin-top: -20px;
+    margin-left: 10px;
+  }
 
-    .MobileFooter {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        height: 60px;
-        background-color: #12191e;
-        z-index: 1000;
-    }
+  .RequestButtons {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .MPUserInfo {
+    margin-left: -5px;
+  }
+
+  .MobileFooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--main-bg);
+    z-index: 1000;
+  }
 }

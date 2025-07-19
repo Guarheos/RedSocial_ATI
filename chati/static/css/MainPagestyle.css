@@ -1,15 +1,155 @@
-/* Header Main Page*/
-/* Cambia lo Siguiente*/
-/* Main Page Body */
+#MPfeed {
+    max-width: 700px;
+    width: 90%;
+    margin: 40px auto 0 auto;
+    background-color: #12191e;
+    border-radius: 8px;
+    overflow: hidden;
+}
 
-  
+.MPpost {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #2a3b47;
+    background-color: transparent;
+    padding: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 5px;
+}
 
-  
+.Chat-Notifcontent {
+    color: #e0e0e0;
+    font-size: 15px;
+    padding-left: 60px;
+    margin-top: -15px;
+}
+
+.MPpost-content{
+    color: #e0e0e0;
+    font-size: 16px;
+    line-height: 1.4;
+    margin-top: -10px; 
+    padding-left: 60px;
+    word-wrap: break-word;
+}
+
+.MPpost:last-child {
+    border-bottom: none;
+}
+
+.MPpost:hover {
+    background-color: #212E36;
+}
+
+.Chat-Notifcontent {
+    color: #e0e0e0;
+    font-size: 15px;
+    padding-left: 60px;
+    margin-top: -10px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
 .MPpost-media {
-    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 60px;
     border-radius: 8px;
     overflow: hidden;
     display: none;
-    padding-left: 50px;
+}
+
+.MobileFooter {
+    display: none;
+}
+
+.MPpost-actions {
+    margin-left: -15px;
+}
+
+@media (max-width: 768px) {
+
+    .Chat-Notifcontent {
+        color: #e0e0e0;
+        font-size: 15px;
+        padding-left: 50px;
+        margin-top: -20px;
+        margin-left: 10px;
+    }
+
+    .MPpost {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px;
+        box-sizing: border-box;
+        background-color: transparent;
+        width: 100%;
+    }
+
+    .MPUserPhoto {
+        width: 40px;
+        height: 40px;
+        margin-left: 50px;
+    }
+
+    .MPpost-media {
+        margin-left: 10px;
+        margin-top: 10px;
+        display: block;
+    }
+
+    /* Footer móvil visible */
+    .MobileFooter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        background-color: #12191e;
+        z-index: 1000;
+    }
+
+    .MPpost-content {
+        color: #e0e0e0;
+        font-size: 15px;
+        padding-left: 50px;
+        margin-top: -20px;
+        margin-left: 10px;
+    }
+
+    .MPpost-actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+    margin-top: 10px;
   }
-  
+
+  .MPpost-actions span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 50px;
+    height: 50px;
+    margin-top: -20px;
+  }
+
+  .MPpost-actions .icon {
+    width: 50px;
+    height: 50px;
+    margin-top: -60px;
+    margin-bottom: -20px;
+  }
+
+  .MPpost-actions .count {
+    font-size: 60px; 
+    color: #2980b9;;  
+    margin-left: -5px;
+  }
+
+}
+
+
