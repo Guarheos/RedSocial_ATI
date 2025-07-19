@@ -39,7 +39,6 @@ body{
     transform: translateX(-50%);
     z-index: 1;
 }
-  
 
 #LogInSearchIcon {
     display: inline-block;
@@ -203,8 +202,8 @@ body{
 #LPGlobe {
     display: inline-block;
     background-image: url(../images/Globe.png);
-    width: 40px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
     background-size: cover;
 }
 

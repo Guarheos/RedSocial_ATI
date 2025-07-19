@@ -1,30 +1,128 @@
 /* Header Notifications*/
 /* Cambia lo siguiente*/
 
+.LogInDivRight, .LogInDivLeft {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.LogInDivRight {
+    justify-content: flex-start;
+}
+
+.LogInDivLeft {
+    justify-content: flex-end;
+}
+
 #NotifMainTitle {
-    margin: 0px 0px 0px 0px;
-    font-size: 35px;
+    color: white;
+    font-size: 24px;
     font-weight: bold;
-    color: white;
+    text-align: center;
+    margin: 0;
 }
-/* Body Request */
 
-.Chat-Notifcontent{
+#MPfeed {
+    max-width: 700px;
+    width: 90%;
+    margin: 40px auto 0 auto;
+    background-color: #12191e;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.MPpost {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #2a3b47;
+    background-color: transparent;
+    padding: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.MPpost:last-child {
+    border-bottom: none;
+}
+
+.MPpost:hover {
+    background-color: #212E36;
+}
+
+.MPpostUser {
     font-size: 16px;
-    margin-bottom: 10px;
-    color: white;
-    padding-left: 55px;
 }
 
+.Chat-Notifcontent {
+    color: #e0e0e0;
+    font-size: 15px;
+    padding-left: 60px;
+    margin-top: -5px;
+}
 
+.MobileFooter {
+    display: none;
+}
 
-/* Estilos responsive para móviles */
 @media (max-width: 768px) {
+.LogInDivRight, .LogInDivLeft {
+flex: 1;
+display: flex;
+align-items: center;
+}
 
-    .LogInNotifMainTitleContainer {
-        margin-left: -40px;
+.LogInDivRight {
+    justify-content: flex-start;
+}
+
+.LogInDivLeft {
+    justify-content: flex-end;
+}
+
+#NotifMainTitle {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+.Chat-Notifcontent {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #e0e0e0;
+    margin-top: -10px;
+    padding-left: 60px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.MPpost {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+    box-sizing: border-box;
+    background-color: transparent;
+    width: 100%;
+}
+
+.MPUserPhoto {
+    width: 40px;
+    height: 40px;
+    margin-left: 50px;
+}
+
+    .MobileFooter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        background-color: #12191e;
+        z-index: 1000;
     }
-
-
-
 }
