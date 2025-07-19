@@ -99,7 +99,6 @@
         display: block;
     }
 
-    /* Footer móvil visible */
     .MobileFooter {
         display: flex;
         justify-content: center;
@@ -149,7 +148,6 @@
     color: #2980b9;;  
     margin-left: -5px;
   }
-
 }
 
 
