@@ -1,242 +1,231 @@
-/* Body Publication */
+:root {
+  --main-bg: #212E36;
+  --secondary-bg: #2c3e50;
+  --main-text: #ecf0f1;
+  --accent-color: #52A5E0;
+  --hover-accent: #3d8bc3;
+  --secondary-btn: #34495e;
+  --font-body: 'Segoe UI', sans-serif;
+}
+
+.PubTextarea,
+.PubPreview {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+} 
+
+/* --- Área Principal --- */
+.PubMain {
+  width: 50%;
+  height: calc(100vh - 95px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  font-family: var(--font-body);
+}
+
+.PubBox {
+  background-color: var(--main-bg);
+  padding: 16px;
+  border-radius: 10px;
+   width: 80%; 
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* --- Área de Vista Previa --- */
+.PubPreview {
+  flex: 1;
+  background-color: var(--secondary-bg);
+  border-radius: 8px;
+  color: #7f8c8d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.PubPreviewPlaceholder {
+  text-align: center;
+}
+
+/* --- Sección de Publicación --- */
+.PubTop {
+    display: flex;
+    align-items: stretch;
+     gap: 8px;
+  height: 45px;
+}
+
+.PubTextarea {
+    flex: 1;
+    resize: none;
+    color: #7f8c8d;
+    border: none;
+    background-color: var(--secondary-bg);
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    outline: none;
+}
+
+/* --- Botón Publicar --- */
+.PubSend {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.PubSend:hover {
+    background-color: var(--hover-accent);
+}
+
+.PubTools {
+    display: flex;
+    justify-content: flex-start;
+    gap: 14px;
+}
+
+.PubBtnEmoji,
+.PubBtnPhoto,
+.PubBtnFile {
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  filter: drop-shadow(0 0 1px var(--secondary-bg));
+  opacity: 0.8;
+  transition: transform 0.2s ease;
+}
+
+.PubBtnEmoji:hover,
+.PubBtnPhoto:hover,
+.PubBtnFile:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.PubBtnEmoji {
+  background-image: url('/static/images/Smile.png');
+}
+.PubBtnPhoto {
+  background-image: url('/static/images/Camera.png');
+}
+.PubBtnFile {
+  background-image: url('/static/images/Paperclip.png');
+}
+
+.MobileFooter {
+    display: none;
+}
+
+/* --- Responsive Móvil --- */
+@media (max-width: 768px) {
+.PubTextarea,
+.PubPreview {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+} 
+
+.PubBox {
+        width: 90%;
+        height: auto;
+        padding: 1rem;
+        gap: 1rem;
+    }
 
 .PubMain {
-    width: 50%;
-    height: calc(100vh - 95px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 0 auto;
-  }
-  
-  
-  .PubBox {
-    display: flex;
-    flex-direction: column;
-    background-color: #212E36;
-    padding: 16px;
-    border-radius: 10px;
-    height: 100%;
     width: 100%;
-    box-sizing: border-box; 
-  }
-  
-  
-  .PubTop {
-    display: flex;
+    padding: 1rem;
+    box-sizing: border-box;
     align-items: flex-start;
-    gap: 12px;
-    flex: 0 0 20%;
-    margin-top: 2%;
-    margin-bottom: 0%;
-  }
-  
-  .PubTools {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex: 0 0 10%;
-    align-self: self-end;
-    margin-top: -5%;
-  }
-
-  .PubUserPhoto {
-    width: 48px;
-    height: 48px;
-    background-color: #bdc3c7;
-    border-radius: 50%;
-  }
-  
-  .PubTextarea {
-    flex: 1;
-    resize: none;
-    padding: 10px;
-    border: none;
-    border-radius: 6px;
-    background-color: #2c3e50;
-    color: #ecf0f1;
-    font-size: 14px;
-    line-height: 1.4;
-    min-height: 60px;
-  }
-  
-  .PubSend {
-    padding: 8px 12px;
-    background-color: #52A5E0;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    height: fit-content;
-  }
-  
-  .PubSend:hover {
-    background-color: #2ecc71;
-  }
-  
-  .PubPreview {
-    flex: 0 0 75%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #2c3e50;
-    border-radius: 8px;
-    color: #7f8c8d;
-    font-size: 14px;
-  }
-  
-  
-  .PubPreviewPlaceholder {
-    text-align: center;
-  }
-  
-  .PubBtnEmoji,
-  .PubBtnPhoto,
-  .PubBtnFile {
-    background-color: transparent;
-    border: none;
-    width: 36px;
-    height: 36px;
-    background-size: cover;
-    cursor: pointer;
-  }
-  
-  .PubBtnEmoji {
-    background-image: url('/static/images/Smile.png');
-  }
-  .PubBtnPhoto {
-    background-image: url('/static/images/Camera.png');
-  }
-  .PubBtnFile {
-    background-image: url('/static/images/Paperclip.png');
-  }
-  
-  
-
-
-
-
-
-
-
-
-
-/* Estilos responsive para móviles */
-@media (max-width: 768px) {
-   /* Estilos responsive para Publication Body */
-
-   .PubMain {
-    width: 98%;
-    height: calc(100vh - 150px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 0 auto;
-  }
-  
-  
-  .PubBox {
-    display: flex;
-    flex-direction: column;
-    background-color: #34495e;
-    padding: 10px;
-    border-radius: 10px;
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box; 
-  }
-  
-  
-  .PubTop {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    flex: 0 0 20%;
-    margin-top: 3%;
-    margin-bottom: 0%;
-  }
-  
-  .PubTools {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex: 0 0 10%;
-    align-self: self-end;
-    margin-top: -5%;
-  }
-
-  .PubUserPhoto {
-    width: 48px;
-    height: 48px;
-    background-color: #bdc3c7;
-    border-radius: 50%;
-  }
-  
-  .PubTextarea {
-    flex: 1;
-    resize: none;
-    padding: 10px;
-    border: none;
-    border-radius: 6px;
-    background-color: #2c3e50;
-    color: #ecf0f1;
-    font-size: 14px;
-    line-height: 1.4;
-    min-height: 60px;
-  }
-  
-  .PubSend {
-    padding: 8px 12px;
-    background-color: #52A5E0;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    height: fit-content;
-  }
-  
-  .PubSend:hover {
-    background-color: #2ecc71;
-  }
-  
-  .PubPreview {
-    flex: 0 0 75%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #2c3e50;
-    border-radius: 8px;
-    color: #7f8c8d;
-    font-size: 14px;
-  }
-  
-  
-  .PubPreviewPlaceholder {
-    text-align: center;
-  }
-  
-  .PubBtnEmoji,
-  .PubBtnPhoto,
-  .PubBtnFile {
-    background-color: transparent;
-    border: none;
-    width: 36px;
-    height: 36px;
-    background-size: cover;
-    cursor: pointer;
-  }
-  
-  .PubBtnEmoji {
-    background-image: url('/static/images/Smile.png');
-  }
-  .PubBtnPhoto {
-    background-image: url('/static/images/Camera.png');
-  }
-  .PubBtnFile {
-    background-image: url('/static/images/Paperclip.png');
-  }
-
-
-
-
 }
+
+
+.PubPreview {
+    min-height: 150px;
+    flex-grow: 0;
+}
+
+.PubTop {
+    flex-direction: column;
+    height: auto;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.PubTextarea {
+    width: 100%;
+    min-height: 30px;
+    resize: none;
+    border: none;
+    background-color: var(--secondary-bg);
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 6px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.PubActions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.PubTools {
+    display: flex;
+    gap: 12px;
+}
+
+.PubBtnEmoji,
+.PubBtnPhoto,
+.PubBtnFile {
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.PubSend {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+  .MobileFooter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        background-color: #12191e;
+        z-index: 1000;
+    }
+}
+
