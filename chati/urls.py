@@ -19,4 +19,5 @@ urlpatterns = [
     path("feed/profile/edit_user", views.edit_user),
     path("feed/notifications", views.notification),
     path("feed/post", views.post),
+    path("feed/post/comment", views.profile),
 ]
