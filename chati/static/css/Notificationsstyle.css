@@ -1,5 +1,4 @@
 /* Header Notifications*/
-/* Cambia lo siguiente*/
 
 .LogInDivRight, .LogInDivLeft {
     flex: 1;
@@ -85,13 +84,11 @@ align-items: center;
 }
 
 .Chat-Notifcontent {
-    font-size: 14px;
-    line-height: 1.4;
     color: #e0e0e0;
-    margin-top: -15px;
-    padding-left: 60px;
-    word-wrap: break-word;
-    white-space: normal;
+    font-size: 15px;
+    padding-left: 50px;
+    margin-top: -20px;
+    margin-left: 10px;
 }
 
 .MPpost {

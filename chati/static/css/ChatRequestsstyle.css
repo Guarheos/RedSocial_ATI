@@ -1,67 +1,154 @@
-/* Header Request*/
-/* Cambia lo siguiente*/
+.LogInDivRight, .LogInDivLeft {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.LogInDivRight {
+    justify-content: flex-start;
+}
+
+.LogInDivLeft {
+    justify-content: flex-end;
+}
 
 #RequestsMainTitle {
-    margin: 0px 0px 0px 0px;
-    font-size: 35px;
-    font-weight: bold;
     color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
 }
-/* Body Request */
+
+#MPfeed {
+    max-width: 700px;
+    width: 90%;
+    margin: 40px auto 0 auto;
+    background-color: #12191e;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.MPpost {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #2a3b47;
+    background-color: transparent;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.MPpost:last-child {
+    border-bottom: none;
+}
 
 .Chat-Requestpreview {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: white;
-    padding-left: 55px;
+    color: #e0e0e0;
+    font-size: 15px;
+    padding-left: 60px;
+    margin-top: -15px;
 }
 
 .RequestButtons {
-    padding-left: 55px;
+    display: flex;
+    gap: 10px;
+    padding-left: 0; 
+}
+
+#RequestBAccept, #RequestBReject {
+    flex: 1; 
+    width: auto; 
+    padding: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#RequestBAccept {
+    background-color: #52A5E0;
+    border: 1px solid #52A5E0;
+    color: white;
 }
 
 #RequestBReject {
-    color: white;
-    width: 150px;
     background-color: transparent;
     border: 1px solid white;
-}
-#RequestBAccept {
     color: white;
-    width: 150px;
-    background-color: #52A5E0;
-    border: 1px solid #52A5E0;
 }
 
+.MobileFooter {
+    display: none;
+}
 
-
-/* Estilos responsive para móviles */
 @media (max-width: 768px) {
-    /* Estilos responsive para Request Body */
-    .Chat-Requestpreview {
-        font-size: 16px;
-        margin-bottom: 10px;
-        color: white;
-        padding-left: 5vw;
-    }
+    .LogInDivRight, .LogInDivLeft {
+flex: 1;
+display: flex;
+align-items: center;
+}
+
+.LogInDivRight {
+    justify-content: flex-start;
+}
+
+.LogInDivLeft {
+    justify-content: flex-end;
+}
+
+#RequestsMainTitle {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+    #MPfeed {
+    max-width: 700px;
+    width: 90%;
+    margin: 40px auto 0 auto;
+    background-color: #12191e;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.Chat-Requestpreview {
+    color: #e0e0e0;
+    font-size: 15px;
+    padding-left: 50px;
+    margin-top: -15px;
+}
+
+.MPpost {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #2a3b47;
+    background-color: transparent;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.MPUserPhoto {
+    width: 40px;
+    height: 40px;
+    margin-left: 40px;
+}
 
     .RequestButtons {
-        display: flex;
-        justify-content: space-evenly;
-        margin-bottom: 10px;
-        margin-left: -30%;
+        flex-direction: column;
     }
 
-    #RequestBReject {
-        color: white;
-        width: 100px;
-        background-color: transparent;
-        border: 1px solid white;
-    }
-    #RequestBAccept {
-        color: white;
-        width: 100px;
-        background-color: #52A5E0;
-        border: 1px solid #52A5E0;
+    .MobileFooter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        background-color: #12191e;
+        z-index: 1000;
     }
 }

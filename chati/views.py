@@ -15,7 +15,7 @@ def change_pass(request):
 	return render(request, "chati/ChangePass.html")
 
 def chat_request(request):
-	return render(request, "chati/ChatRquests.html")
+	return render(request, "chati/ChatRequests.html")
 
 def chats(request):
 	return render(request, "chati/Chats.html")
