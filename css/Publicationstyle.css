@@ -115,13 +115,17 @@
 }
 
 .PubBtnEmoji {
-  background-image: url('/static/images/Smile.png');
+  background-image: url('../images/Smile.png');
 }
 .PubBtnPhoto {
-  background-image: url('/static/images/Camera.png');
+  background-image: url('../images/Camera.png');
 }
 .PubBtnFile {
-  background-image: url('/static/images/Paperclip.png');
+  background-image: url('../images/Paperclip.png');
+}
+
+.PubTextarea:focus {
+  border: 1px solid #52A5E0;
 }
 
 .MobileFooter {

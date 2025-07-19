@@ -88,6 +88,17 @@
   font-size: 13px;
 }
 
+#RequestBAccept:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    }
+
+    #RequestBReject:hover {
+        background-color: white;
+        color: black;
+        border-color: #bdc3c7;
+    }
+
 .Chat-Notifcontent,
 .Chat-Requestpreview {
   color: var(--text-main);
@@ -197,4 +208,15 @@ align-items: center;
     background-color: var(--main-bg);
     z-index: 1000;
   }
+
+  #RequestBAccept:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    }
+
+    #RequestBReject:hover {
+        background-color: white;
+        color: black;
+        border-color: #bdc3c7;
+    }
 }
