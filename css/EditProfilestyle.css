@@ -1,82 +1,91 @@
-/* Header Edit Profile*/
-/* No cambia con respecto a Landing Page*/
-
-/* Body Edit Profile */
-
-
 #EPMainTitle {
-    color: white;
-    font-size: 40px;
-    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 36px;
+    margin-bottom: 25px;
+    margin-top: 44px;
 }
 
 .EPform-container {
-    background-color: #ecf0f1;
-    padding: 20px 75px 50px 75px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    width: 750px;
-    display: flex;              
-    flex-direction: column;     
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+    max-width: 450px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    border-radius: 16px;
+    margin-bottom: 25px;
 }
 
-.EPform-container p{
-    margin: 0px;
+.EPform-container p {
+    margin: 0 0 8px 0;
     align-self: flex-start;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
 }
 
-.EPFInputs{
+.EPFInputs {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .EPform-container input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 12px;
-    border: 1px solid #bdc3c7;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-size: 16px;
 }
-  
+
+.EPPProfile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+#EPSpanPProfile {
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+}
+
 .EPform-container button {
-    align-self: center;
-    width: auto;
-    padding: 30px 60px 30px 60px;
+    width: 100%;
+    padding: 15px;
     background-color: #52A5E0;
     color: white;
     border: none;
     font-weight: bold;
     cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
 }
-  
+
 .EPform-container button:hover {
     background-color: #2980b9;
 }
 
-.EPPProfile{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-    width: 100%;
-}
-
-#EPSpanPProfile{
-    font-size: 20px;
-}
-
 .EPswitch {
     position: relative;
     display: inline-block;
     width: 60px;
     height: 34px;
-  }
-  
-  .EPswitch input {
+}
+
+.EPswitch input {
     opacity: 0;
     width: 0;
     height: 0;
-  }
-  
-  .EPslider {
+}
+
+.EPslider {
     position: absolute;
     cursor: pointer;
     background-color: #ccc;
@@ -86,9 +95,9 @@
     right: 0;
     bottom: 0;
     transition: 0.4s;
-  }
-  
-  .EPslider::before {
+}
+
+.EPslider::before {
     content: "";
     position: absolute;
     height: 26px;
@@ -98,127 +107,55 @@
     background-color: white;
     border-radius: 50%;
     transition: 0.4s;
-  }
-  
-  input:checked + .EPslider {
+}
+
+input:checked + .EPslider {
     background-color: #52A5E0;
-  }
-  
-  input:checked + .EPslider::before {
+}
+
+input:checked + .EPslider::before {
     transform: translateX(26px);
-  }
-  
+}
 
-
-
-
-
+.MobileFooter {
+    display: none;
+}
 
 @media (max-width: 768px) {
+    #EPMainTitle {
+        margin-top: 10px;
+        text-align: center;
+        padding: 0 10px;
+        font-size: 30px;
+    }
 
-  /* Estilos responsive para Edit Profile Body */
+    .EPform-container {
+        padding: 30px 25px;
+        margin-bottom: 15px;
+        margin-bottom: 15px;
+        background-color: #ffffff;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        margin-bottom: 70px;
+        display: flex;              
+        flex-direction: column;     
+        align-items: center;
+    }
 
-  #EPMainTitle {
-    color: white;
-    font-size: 40px;
-    margin-bottom: 20px;
-}
+    .PMain {
+        padding: 30px 40px;
+        box-sizing: border-box;
+        align-items: center;
+    }
 
-.EPform-container {
-    background-color: #ecf0f1;
-    padding: 20px 45px 20px 30px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    width: 250px;
-    display: flex;              
-    flex-direction: column;     
-    align-items: center;
-}
-
-.EPform-container p{
-    margin: 0px;
-    align-self: flex-start;
-}
-
-.EPFInputs{
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.EPform-container input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 12px;
-    border: 1px solid #bdc3c7;
-}
-  
-.EPform-container button {
-    align-self: center;
-    width: auto;
-    padding: 15px 30px 15px 30px;
-    background-color: #52A5E0;
-    color: white;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-}
-  
-  .EPform-container button:hover {
-    background-color: #2980b9;
-}
-
-.EPPProfile{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-    width: 100%;
-}
-
-#EPSpanPProfile{
-    font-size: 20px;
-}
-
-.EPswitch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
-  
-  .EPswitch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .EPslider {
-    position: absolute;
-    cursor: pointer;
-    background-color: #ccc;
-    border-radius: 34px;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transition: 0.4s;
-  }
-  
-  .EPslider::before {
-    content: "";
-    position: absolute;
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    border-radius: 50%;
-    transition: 0.4s;
-  }
-  
-  input:checked + .EPslider {
-    background-color: #52A5E0;
-  }
-  
-  input:checked + .EPslider::before {
-    transform: translateX(26px);
-  }
+    .MobileFooter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        background-color: #12191e;
+        z-index: 1000;
+    }
 }
