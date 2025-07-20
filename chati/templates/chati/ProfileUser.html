@@ -47,6 +47,7 @@
         </div>
     </header>
 
+    <main class="PUcontainer">
     <main class="PMain">
         <div class="PUprofile-header"></div>
         <div class="PUprofile">
@@ -56,16 +57,16 @@
                     <div class="PUname-section">
                       <h2 class="PUname">Usuario</h2>
                       <div class="PUButtons">
-                        <p class="PUusername">@Usuario1</p>
+                        <p class="PUusername">@Usuario</p>
                           <div class="PUButtons-row">
-                            <button class="PUEditarPerfil">Editar Perfil</button>
+                            <button class="PUEditarPerfil">Editar perfil</button>
                             <button class="PUMessage"></button>
                           </div>
                       </div>
                     <div class="PUstats">
-                        <div class="PUstat" id="CantAmigos"><strong>200</strong><span>Amigos</span></div>
-                        <div class="PUstat" id="CantPosts"><strong>5</strong><span>Posts</span></div>
-                        <div class="PUstat" id="CantCom"><strong>30</strong><span>Comentarios</span></div>
+                        <div class="PUstat" id="CantAmigos"><strong>00</strong><span>Amigos</span></div>
+                        <div class="PUstat" id="CantPosts"><strong>00</strong><span>Posts</span></div>
+                        <div class="PUstat" id="CantCom"><strong>00</strong><span>Comentarios</span></div>
                     </div>
                   </div>
                </div>
@@ -79,7 +80,7 @@
               <div class="PUUserPhoto"></div>
               <div class="PUUserInfo">
                 <strong class="PUpostUser">Usuario</strong>
-                <span class="PUpostUserdate"> · May 29</span>
+                <span class="PUpostUserdate"> · Ene 01</span>
               </div>
             </div>
       
@@ -89,20 +90,18 @@
       
             <div class="PUpost-actions">
               <span class="comments">
-                <img src="{% static 'images/Chat.png' %}" alt="Comentarios" class="icon">
-                <span class="count" id="commentCount">5</span>
-              </span>
-              <span class="likes" id="likeBtn">
-                <img src="{% static 'images/Heart.png' %}" alt="Me gusta" class="icon">
-                <span class="count" id="likeCount">5</span>
-              </span>
-              <span class="share" id="shareBtn">
-                <img src="{% static 'images/Share.png' %}" alt="Compartir" class="icon">
-                <span class="count" id="shareCount">0</span>
-              </span>
+                  <img src="{% static 'images/Chat.png' %}" alt="Comentarios" class="icon"> <span class="count" id="commentCount">0</span>
+                </span>
+                <span class="likes" id="likeBtn">
+                  <img src="{% static 'images/Heart.png' %}" alt="Me gusta" class="icon"> <span class="count" id="likeCount">0</span>
+                </span>
+                <span class="share" id="shareBtn">
+                  <img src="{% static 'images/Share.png' %}" alt="Compartir" class="icon"> <span class="count" id="shareCount">0</span>
+                </span>
             </div>
           </div>
         </div>
+      </main>
       </main>
       
       <footer class="MobileFooter">
