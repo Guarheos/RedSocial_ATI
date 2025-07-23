@@ -27,9 +27,12 @@ def log_in(request):
             if user is not None:
                 login(request, user)
                 return redirect('feed')
+        # Add specific error messages
         messages.error(request, "Usuario o contraseña inválidos")
     else:
         form = CustomAuthenticationForm()
+    
+    # Pass the form to the template context
     return render(request, "chati/LogIn.html", {'form': form})
 
 def sign_in(request):

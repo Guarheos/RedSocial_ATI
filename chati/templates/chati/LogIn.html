@@ -13,18 +13,30 @@
         <img src="{% static 'images/Logo.png' %}" alt="Logo de chATI" id="LPLogo">
         <div class="LPHDiv">
             <a href="#" id="LPGlobe"></a>
-          </div>
+        </div>
     </header>
 
     <main class="LNMain">
         <h1>Iniciar sesión</h1>
+        
+        <!-- Display error messages -->
+        {% if messages %}
+        <div class="error-messages">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        
         <form method="POST" action="{% url 'login' %}" class="LNform-container">
             {% csrf_token %}
-            <div class="LNFInputs">            
+            <div class="LNFInputs">
+                <!-- Use Django form fields instead of raw inputs -->
                 <p id="LNFUser">Usuario</p>
-                <input type="text" name="username" required>
+                {{ form.username }}
+                
                 <p id="LNFPass">Contraseña</p>
-                <input type="password" name="password" required>
+                {{ form.password }}
             </div>
             <button type="submit">INICIA SESIÓN</button>
             <div class="LNRButtons">
@@ -32,7 +44,6 @@
                 <a href="{% url 'password_recover' %}" class="button" id="LNRButtonsRC">RECUPERAR CONTRASEÑA</a>
             </div>
         </form>
-
     </main>
 </body>
 </html>
