@@ -13,30 +13,50 @@
         <img src="{% static 'images/Logo.png' %}" alt="Logo de chATI" id="LPLogo">
         <div class="LPHDiv">
             <a href="#" id="LPGlobe"></a>
-          </div>
+        </div>
     </header>
 
-     <main class="SNMain">
+    <main class="SNMain">
         <h1>Registro</h1>
-        <div class="SNform-container">
-            <div class="SNFInputs">            
+        
+        {% if form.errors %}
+            <div class="form-errors">
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        
+        <form method="POST" class="SNform-container">
+            {% csrf_token %}
+            <div class="SNFInputs">
                 <p id="SNFNombre">Nombre</p>
-                <input type="text" >
+                {{ form.first_name }}
+                
                 <p id="SNFApellido">Apellido</p>
-                <input type="text" >
+                {{ form.last_name }}
+                
                 <p id="SNFEmail">Correo electrónico</p>
-                <input type="email" >
+                {{ form.email }}
+                
                 <p id="SNFUsername">Nombre de usuario</p>
-                <input type="text" >
+                {{ form.username }}
+                
                 <p id="SNFPassword">Contraseña</p>
-                <input type="password" >
+                {{ form.password1 }}
+                
                 <p id="SNFConPassword">Confirmar contraseña</p>
-                <input type="password" >
+                {{ form.password2 }}
             </div>
             <div class="SNButton">
-                <a href="{% url 'signin' %}" class="button">REGISTRATE</a>
+                <button type="submit" class="button">REGISTRATE</button>
             </div>
-          </div>
+        </form>
     </main>
 </body>
 </html>

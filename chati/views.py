@@ -37,10 +37,12 @@ def sign_in(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            # Crear perfil automáticamente
             Profile.objects.create(user=user)
             login(request, user)
             return redirect('feed')
+        else:
+            # Add form validation messages
+            messages.error(request, "Por favor corrige los errores en el formulario")
     else:
         form = CustomUserCreationForm()
     return render(request, "chati/SignIn.html", {'form': form})
@@ -125,44 +127,18 @@ def chatting(request, chat_id):
     return render(request, "chati/ChattingUser.html", {'chat': chat, 'messages': messages})
 
 # Renderizado estatico
-def index(request):
-	return render(request, "chati/LandingPage.html")
-
-def change_pass(request):
-	return render(request, "chati/ChangePass.html")
+def chats(request):
+	return render(request, "chati/Chats.html")
 
 def chat_request(request):
 	return render(request, "chati/ChatRequests.html")
 
-def chats(request):
-	return render(request, "chati/Chats.html")
-
-def chatting(request):
-	return render(request, "chati/ChattingUser.html")
+def notification(request):
+	return render(request, "chati/Notifications.html")
 
 def comment(request):
 	return render(request, "chati/Comments.html")
 
-def edit_user(request):
-	return render(request, "chati/EditProfile.html")
-
-def friends(request):
-	return render(request, "chati/Friends.html")
-
-def main(request):
-	return render(request, "chati/MainPage.html")
-
-def notification(request):
-	return render(request, "chati/Notifications.html")
-
-def profile(request):
-	return render(request, "chati/ProfileUser.html")
-
-def post(request):
-	return render(request, "chati/Publication.html")
-
-def recover_pass(request):
-	return render(request, "chati/RecoverPass.html")
 
 @login_required
 def log_out(request):
