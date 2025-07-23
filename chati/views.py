@@ -15,7 +15,12 @@ from .forms import (
 
 # Manejo de formas
 def index(request):
-    return render(request, "chati/LandingPage.html")
+    if request.user.is_authenticated:
+        # Usuario autenticado - redirigir al feed
+        return redirect('feed')
+    else:
+        # Usuario no autenticado - mostrar landing page
+        return render(request, "chati/LandingPage.html")
 
 def log_in(request):
     if request.method == 'POST':
