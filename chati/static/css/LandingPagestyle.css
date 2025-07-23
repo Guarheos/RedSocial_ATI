@@ -106,16 +106,17 @@
 }
 
 .mobile-popup a {
-    margin: 0[p];
+    margin: 0px 5px 0px 5px;
     text-decoration: none;
     color: #C8CDD0;
 }
 
+@media (min-width: 769px) {
 
-#LPMobilePopup {
-    display: none !important;
+    #LPMobilePopup {
+        display: none !important;
+    }
 }
-
 
 /* --- Estilos para Móvil --- */
 @media (max-width: 768px) {
