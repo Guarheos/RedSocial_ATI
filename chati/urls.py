@@ -4,7 +4,7 @@ from . import views
 from django.contrib import admin
 
 urlpatterns = [
-    path('inicio', views.index, name='index'),
+    path('', views.index, name='index'),
     path("login", views.log_in, name='login'),
     path("logout", views.logout, name='logout'),
     path("login/password_recover", views.recover_pass, name='password_recover'),
