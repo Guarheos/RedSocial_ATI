@@ -28,21 +28,21 @@
         <div class="LogInLogoContainer">
             <img src="{% static 'images/Logo.png' %}" alt="Logo de chATI" id="LPLogo">
         </div>
-        <div class="LogInDivLeft">
+       <div class="LogInDivLeft">
             <div class="LogInPublish">
-                <a href="#" id="LogInPublishIcon"></a>
+                <a href="{% url 'feed-post' %}" id="LogInPublishIcon"></a>
             </div>
             <div class="LogInChat">
-                <a href="#" id="LogInChatIcon"></a>
+                <a href="{% url 'feed-chat' %}" id="LogInChatIcon"></a>
             </div>
             <div class="LogInLike">
-                <a href="#" id="LogInLikeIcon"></a>
+                <a href="{% url 'feed-notifications' %}" id="LogInLikeIcon"></a>
             </div>
             <div class="LogInProfile">
-                <a href="#" id="LogInProfileIcon"></a>
+                <a href="{% url 'feed-profile' %}" id="LogInProfileIcon"></a>
             </div>
             <div class="LogInHome">
-                <a href="#" id="LogInHomeIcon"></a>
+                <a href="{% url 'feed' %}" id="LogInHomeIcon"></a>
             </div>
         </div>
     </header>

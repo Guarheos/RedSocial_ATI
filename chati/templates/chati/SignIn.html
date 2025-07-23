@@ -20,7 +20,7 @@
         <h1>Registro</h1>
         
         {% if form.errors %}
-            <div class="form-errors">
+            <div class="error-messages">
                 {% for field in form %}
                     {% for error in field.errors %}
                         <p>{{ error }}</p>

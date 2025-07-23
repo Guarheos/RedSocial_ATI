@@ -291,6 +291,16 @@ body{
     background-color: #2c3e50;
   }
 
+.LogInLogoutLink {
+  text-decoration: none;
+  color: white;
+}
+
+
+.error-messages {
+  color: white;
+
+}
 
 /* Estilos responsive para móviles */
 @media (max-width: 768px) {
