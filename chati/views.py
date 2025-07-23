@@ -128,12 +128,6 @@ def chatting(request, chat_id):
 def index(request):
 	return render(request, "chati/LandingPage.html")
 
-def log_in(request):
-	return render(request, "chati/LogIn.html")
-
-def sign_in(request):
-	return render(request, "chati/SignIn.html")
-
 def change_pass(request):
 	return render(request, "chati/ChangePass.html")
 
@@ -169,3 +163,8 @@ def post(request):
 
 def recover_pass(request):
 	return render(request, "chati/RecoverPass.html")
+
+@login_required
+def log_out(request):
+    logout(request)
+    return redirect('index')
