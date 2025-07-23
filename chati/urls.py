@@ -5,9 +5,17 @@ from django.contrib import admin
 
 urlpatterns = [
     path('inicio', views.index, name='index'),
-    path("login", views.log_in),
-    path("login/password_recover", views.recover_pass),
-    path("signin", views.sign_in),
+    path("login", views.log_in, name='login'),
+    path("logout", views.log_out, name='logout'),
+    path("login/password_recover", views.recover_pass, name='password_recover'),
+    path("login/password_recover/change_pass/<uidb64>/<token>/", 
+         views.CustomPasswordResetConfirmView.as_view(), 
+         name='password_reset_confirm'),
+    path("login/password_recover/change_pass/done", 
+         views.CustomPasswordResetCompleteView.as_view(), 
+         name='password_reset_complete'),
+    path("signin", views.sign_in, name='signin'),
+    path("chati/edit_profile/change_pass", views.change_pass, name='change_pass'),
     # path("login/password_recover/change_pass", views.change_pass),
     # path("chati/edit_profile/change_pass", views.change_pass),
 
