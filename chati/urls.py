@@ -6,7 +6,7 @@ from django.contrib import admin
 urlpatterns = [
     path('', views.index, name='index'),
     path("login", views.log_in, name='login'),
-    path("logout", views.logout, name='logout'),
+    path("logout", views.log_out, name='logout'),
     path("login/password_recover", views.recover_pass, name='password_recover'),
     path("login/password_recover/change_pass/<uidb64>/<token>/", 
          views.CustomPasswordResetConfirmView.as_view(), 
