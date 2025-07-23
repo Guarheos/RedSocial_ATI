@@ -11,6 +11,10 @@ urlpatterns = [
     # path("login/password_recover/change_pass", views.change_pass),
     # path("chati/edit_profile/change_pass", views.change_pass),
 
+    path("feed/profile/<int:user_id>", views.profile, name='profile'),
+    path("feed/post/<int:post_id>", views.post, name='post'),
+    path("feed/chat-user/<int:chat_id>", views.chatting, name='chatting'),
+
     path("feed", views.main),
     path("feed/chats", views.chats),
     path("feed/chats/request", views.chat_request),
