@@ -1,25 +1,32 @@
 function toggleMobilePopup(event) {
-  event.preventDefault(); // Detiene la navegación del <a>
+  event.preventDefault(); 
   const popup = document.getElementById("MobilePopup");
   const homeicon = document.getElementById("LogInHomeIcon");
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
   if (isMobile) {
     popup.classList.toggle("hidden");
-    homeicon.setAttribute("href", "#");
+    try{
+      homeicon.setAttribute("href", "#");
+    } catch{}
+    
   }
 }
 
 window.addEventListener("resize", () => {
-  const popup = document.getElementById("MobilePopup");
   const homeicon = document.getElementById("LogInHomeIcon");
+  const popup = document.getElementById("MobilePopup");
   const isDesktop = window.innerWidth > 768;
 
   if (isDesktop) {
-    homeicon.setAttribute("href", "{% url 'feed' %}");
-    // Seguridad: asegura que el popup esté oculto
+    const feedURL = homeicon?.dataset?.feed;
+    if (homeicon && feedURL) {
+      homeicon.setAttribute("href", feedURL);
+    }
+
     if (popup && !popup.classList.contains("hidden")) {
       popup.classList.add("hidden");
       console.log("Popup ocultado por resize en escritorio");
     }
   }
 });
+
