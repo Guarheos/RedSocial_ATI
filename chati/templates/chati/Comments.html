@@ -18,7 +18,7 @@
                 <a href="#" id="LogInGlobeIcon"></a>
             </div>
             <div class="LogInLogout">
-                <a href="#" id="LogInLogoutLink">CERRAR SESIÓN</a>
+                <a href="{% url 'logout' %}" id="LogInLogoutLink">CERRAR SESIÓN</a>
             </div>
         </div>
         <div class="LogInLogoContainer">
@@ -26,19 +26,19 @@
         </div>
         <div class="LogInDivLeft">
             <div class="LogInPublish">
-                <a href="#" id="LogInPublishIcon"></a>
+                <a href="{% url 'feed-post' %}" id="LogInPublishIcon"></a>
             </div>
             <div class="LogInChat">
-                <a href="#" id="LogInChatIcon"></a>
+                <a href="{% url 'feed-chat' %}" id="LogInChatIcon"></a>
             </div>
             <div class="LogInLike">
-                <a href="#" id="LogInLikeIcon"></a>
+                <a href="{% url 'feed-notifications' %}" id="LogInLikeIcon"></a>
             </div>
             <div class="LogInProfile">
-                <a href="#" id="LogInProfileIcon"></a>
+                <a href="{% url 'feed-profile' %}" id="LogInProfileIcon"></a>
             </div>
             <div class="LogInHome">
-                <a href="#" id="LogInHomeIcon"></a>
+                <a href="{% url 'feed' %}" id="LogInHomeIcon"></a>
             </div>
         </div>
     </header>
@@ -91,19 +91,19 @@
       <footer class="MobileFooter">
         <div class="MobileDiv">
             <div class="MobileHome">
-                <a href="#" id="MobileHomeIcon"></a>
+                <a href="{% url 'feed' %}" id="MobileHomeIcon"></a>
             </div>
             <div class="MobileChat">
-                <a href="#" id="MobileChatIcon"></a>
+                <a href="{% url 'feed-chat' %}" id="MobileChatIcon"></a>
             </div>
             <div class="MobilePublish">
-                <a href="#" id="MobilePublishIcon"></a>
+                <a href="{% url 'feed-post' %}" id="MobilePublishIcon"></a>
             </div>
             <div class="MobileLike">
-                <a href="#" id="MobileLikeIcon"></a>
+                <a href="{% url 'feed-notifications' %}" id="MobileLikeIcon"></a>
             </div>
             <div class="MobileProfile">
-                <a href="#" id="MobileProfileIcon"></a>
+                <a href="{% url 'feed-profile' %}" id="MobileProfileIcon"></a>
             </div>
         </div>
     </footer>

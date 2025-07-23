@@ -18,19 +18,21 @@
 
     <main class="LNMain">
         <h1>Iniciar sesión</h1>
-        <div class="LNform-container">
+        <form method="POST" action="{% url 'login' %}" class="LNform-container">
+            {% csrf_token %}
             <div class="LNFInputs">            
                 <p id="LNFUser">Usuario</p>
-                <input type="text">
+                <input type="text" name="username" required>
                 <p id="LNFPass">Contraseña</p>
-                <input type="text">
+                <input type="password" name="password" required>
             </div>
-            <button>INICIA SESIÓN</button>
+            <button type="submit">INICIA SESIÓN</button>
             <div class="LNRButtons">
-                <button>REGISTRATE</button>
-                <button id="LNRButtonsRC">RECUPERAR CONTRASEÑA</button>
+                <a href="{% url 'signin' %}" class="button">REGÍSTRATE</a>
+                <a href="{% url 'password_recover' %}" class="button" id="LNRButtonsRC">RECUPERAR CONTRASEÑA</a>
             </div>
-          </div>
+        </form>
+
     </main>
 </body>
 </html>

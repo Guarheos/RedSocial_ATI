@@ -13,8 +13,8 @@
         <img src="{% static 'images/Logo.png' %}" alt="Logo de chATI" id="LPLogo">
         <div class="LPHDiv">
             <a href="#" id="LPGlobe"></a>
-            <a href="#" id="LPLogin">INICIAR SESIÓN</a>
-            <a href="#" id="LPSignin">REGISTRATE</a>
+            <a href="{% url 'login' %}" id="LPLogin">INICIAR SESIÓN</a>
+            <a href="{% url 'signin' %}" id="LPSignin">REGISTRATE</a>
           </div>
     </header>
 
