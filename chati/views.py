@@ -4,6 +4,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import PasswordResetConfirmView, PasswordResetCompleteView
 from django.contrib import messages
+from django.db.models import Q, Count
 from .models import Profile, Post, Comment, Friendship, Chat, Message
 from .forms import (
     CustomUserCreationForm, 
@@ -113,9 +114,32 @@ def main(request):
     posts = Post.objects.all().order_by('-post_date')
     return render(request, "chati/MainPage.html", {'posts': posts})
 
+@login_required
 def profile(request):
     user_profile = get_object_or_404(Profile, user=request.user)
-    return render(request, "chati/ProfileUser.html", {'profile': user_profile})
+    
+    # Calcular estadísticas
+    friends_count = Friendship.objects.filter(
+        (Q(requester=request.user) | Q(receiver=request.user)),
+        status='accepted'
+    ).count()
+    
+    posts_count = Post.objects.filter(user=request.user).count()
+    
+    comments_count = Comment.objects.filter(user=request.user).count()
+    
+    # Obtener publicaciones del usuario
+    user_posts = Post.objects.filter(user=request.user).order_by('-post_date')
+    
+    context = {
+        'profile': user_profile,
+        'friends_count': friends_count,
+        'posts_count': posts_count,
+        'comments_count': comments_count,
+        'user_posts': user_posts,
+    }
+    
+    return render(request, "chati/ProfileUser.html", context)
 
 def friends(request):
     friendships = Friendship.objects.filter(

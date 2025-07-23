@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>chATI - Red Social para Estudiantes</title>
+    <title>Perfil de {{ profile.user.first_name }} - chATI</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/ProfileUserstyle.css' %}">
     <script src="{% static 'js/MobilePopup.js' %}"></script>
@@ -54,77 +54,150 @@
     <main class="PMain">
         <div class="PUprofile-header"></div>
         <div class="PUprofile">
-              <div class="PUbanner">
+            <div class="PUbanner">
                 <div class="PUprofile-info">
-                    <div class="PUavatar"></div>
-                    <div class="PUname-section">
-                      <h2 class="PUname">Usuario</h2>
-                      <div class="PUButtons">
-                        <p class="PUusername">@Usuario</p>
-                          <div class="PUButtons-row">
-                            <button class="PUEditarPerfil">Editar perfil</button>
-                            <button class="PUMessage"></button>
-                          </div>
-                      </div>
-                    <div class="PUstats">
-                        <div class="PUstat" id="CantAmigos"><strong>00</strong><span>Amigos</span></div>
-                        <div class="PUstat" id="CantPosts"><strong>00</strong><span>Publicaciones</span></div>
-                        <div class="PUstat" id="CantCom"><strong>00</strong><span>Comentarios</span></div>
+                    <!-- Imagen de perfil dinámica -->
+                    <div class="PUavatar" 
+                         {% if profile.profile_picture_url %}
+                         style="background-image: url('{{ profile.profile_picture_url }}')"
+                         {% else %}
+                         style="background-image: url('{% static 'images/default-avatar.png' %}')"
+                         {% endif %}>
                     </div>
-                  </div>
-               </div>
+                    
+                    <div class="PUname-section">
+                        <!-- Nombre completo del usuario -->
+                        <h2 class="PUname">{{ profile.user.first_name }} {{ profile.user.last_name }}</h2>
+                        
+                        <div class="PUButtons">
+                            <!-- Nombre de usuario -->
+                            <p class="PUusername">@{{ profile.user.username }}</p>
+                            
+                            <div class="PUButtons-row">
+                                <!-- Botón para editar perfil -->
+                                <a href="{% url 'feed-profile-edit_user' %}" class="PUEditarPerfil">Editar perfil</a>
+                                <button class="PUMessage"></button>
+                            </div>
+                        </div>
+                        
+                        <!-- Estadísticas -->
+                        <div class="PUstats">
+                            <div class="PUstat" id="CantAmigos">
+                                <strong>{{ friends_count }}</strong>
+                                <span>Amigos</span>
+                            </div>
+                            <div class="PUstat" id="CantPosts">
+                                <strong>{{ posts_count }}</strong>
+                                <span>Publicaciones</span>
+                            </div>
+                            <div class="PUstat" id="CantCom">
+                                <strong>{{ comments_count }}</strong>
+                                <span>Comentarios</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
+            <!-- Biografía -->
+            {% if profile.bio %}
+            <div class="PUbio-section">
+                <p>{{ profile.bio }}</p>
+            </div>
+            {% endif %}
         </div>
 
-          
+        <!-- Sección de publicaciones -->
         <div id="PUfeed">
-          <div class="PUpost">
-            <div class="PUpost-header">
-              <div class="PUUserPhoto"></div>
-              <div class="PUUserInfo">
-                <strong class="PUpostUser">Usuario</strong>
-                <span class="PUpostUserdate"> · Ene 01</span>
-              </div>
+            {% for post in user_posts %}
+            <div class="PUpost">
+                <div class="PUpost-header">
+                    <!-- Foto del usuario en la publicación -->
+                    <div class="PUUserPhoto"
+                         {% if profile.profile_picture_url %}
+                         style="background-image: url('{{ profile.profile_picture_url }}')"
+                         {% else %}
+                         style="background-image: url('{% static 'images/default-avatar.png' %}')"
+                         {% endif %}>
+                    </div>
+                    
+                    <div class="PUUserInfo">
+                        <strong class="PUpostUser">{{ profile.user.first_name }} {{ profile.user.last_name }}</strong>
+                        <span class="PUpostUserdate"> · {{ post.post_date|date:"M d, Y" }}</span>
+                    </div>
+                </div>
+                
+                <!-- Contenido de la publicación -->
+                <p class="PUpost-content">{{ post.text_content }}</p>
+                
+                <!-- Multimedia si existe -->
+                {% if post.media_url %}
+                <div class="PUpost-media" 
+                     style="background-image: url('{{ post.media_url }}')">
+                </div>
+                {% endif %}
+                
+                <!-- Acciones de la publicación -->
+                <div class="PUpost-actions">
+                    <span class="comments">
+                        <img src="{% static 'images/Chat.png' %}" alt="Comentarios" class="icon"> 
+                        <span class="count">{{ post.comment_set.count }}</span>
+                    </span>
+                    <span class="likes" id="likeBtn">
+                        <img src="{% static 'images/Heart.png' %}" alt="Me gusta" class="icon"> 
+                        <span class="count" id="likeCount">0</span>
+                    </span>
+                    <span class="share" id="shareBtn">
+                        <img src="{% static 'images/Share.png' %}" alt="Compartir" class="icon"> 
+                        <span class="count" id="shareCount">0</span>
+                    </span>
+                </div>
+                
+                <!-- Comentarios -->
+                {% if post.comment_set.all %}
+                <div class="PUcomments-section">
+                    {% for comment in post.comment_set.all|slice:":3" %}
+                    <div class="PUcomment">
+                        <strong>{{ comment.user.username }}:</strong> 
+                        {{ comment.comment_content }}
+                    </div>
+                    {% endfor %}
+                    {% if post.comment_set.count > 3 %}
+                    <div class="PUview-more">
+                        Ver {{ post.comment_set.count|add:"-3" }} comentarios más...
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
             </div>
-      
-            <p class="PUpost-content">Lindo día!</p>
-      
-            <div class="PUpost-media"></div>
-      
-            <div class="PUpost-actions">
-              <span class="comments">
-                  <img src="{% static 'images/Chat.png' %}" alt="Comentarios" class="icon"> <span class="count" id="commentCount">0</span>
-                </span>
-                <span class="likes" id="likeBtn">
-                  <img src="{% static 'images/Heart.png' %}" alt="Me gusta" class="icon"> <span class="count" id="likeCount">0</span>
-                </span>
-                <span class="share" id="shareBtn">
-                  <img src="{% static 'images/Share.png' %}" alt="Compartir" class="icon"> <span class="count" id="shareCount">0</span>
-                </span>
+            {% empty %}
+            <div class="PUno-posts">
+                <p>No hay publicaciones todavía</p>
+                <a href="{% url 'feed-post' %}" class="PUcreate-post">Crear primera publicación</a>
             </div>
-          </div>
+            {% endfor %}
         </div>
-      </main>
-      </main>
+    </main>
+</main>
       
-      <footer class="MobileFooter">
-        <div class="MobileDiv">
-            <div class="MobileHome">
-                <a href="{% url 'feed' %}" id="MobileHomeIcon"></a>
-            </div>
-            <div class="MobileChat">
-                <a href="{% url 'feed-chat' %}" id="MobileChatIcon"></a>
-            </div>
-            <div class="MobilePublish">
-                <a href="{% url 'feed-post' %}" id="MobilePublishIcon"></a>
-            </div>
-            <div class="MobileLike">
-                <a href="{% url 'feed-notifications' %}" id="MobileLikeIcon"></a>
-            </div>
-            <div class="MobileProfile">
-                <a href="{% url 'feed-profile' %}" id="MobileProfileIcon"></a>
-            </div>
+<footer class="MobileFooter">
+    <div class="MobileDiv">
+        <div class="MobileHome">
+            <a href="{% url 'feed' %}" id="MobileHomeIcon"></a>
         </div>
-    </footer>
+        <div class="MobileChat">
+            <a href="{% url 'feed-chat' %}" id="MobileChatIcon"></a>
+        </div>
+        <div class="MobilePublish">
+            <a href="{% url 'feed-post' %}" id="MobilePublishIcon"></a>
+        </div>
+        <div class="MobileLike">
+            <a href="{% url 'feed-notifications' %}" id="MobileLikeIcon"></a>
+        </div>
+        <div class="MobileProfile">
+            <a href="{% url 'feed-profile' %}" id="MobileProfileIcon"></a>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
