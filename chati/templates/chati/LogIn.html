@@ -7,12 +7,16 @@
     <title>chATI - Red Social para Estudiantes</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/LogInstyle.css' %}">
+    <script src="{% static 'js/MobilePopup.js' %}"></script>
 </head>
 <body>
     <header>
         <img src="{% static 'images/Logo.png' %}" alt="Logo de chATI" id="LPLogo">
         <div class="LPHDiv">
-            <a href="#" id="LPGlobe"></a>
+            <a href="#" id="LPGlobe" onclick="toggleMobilePopup(event)"></a>
+            <div id="MobilePopup" class="mobile-popup hidden">
+              <a href="{% url 'index' %}">INICIO</a>
+            </div>
         </div>
     </header>
 

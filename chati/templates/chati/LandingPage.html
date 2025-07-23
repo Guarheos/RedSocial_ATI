@@ -7,17 +7,17 @@
     <title>chATI - Red Social para Estudiantes</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/LandingPagestyle.css' %}">
-    <script src="{% static 'js/LandingPage.js' %}"></script>
+    <script src="{% static 'js/MobilePopUp.js' %}"></script>
 </head>
 <body>
     <header>
         <img src="{% static 'images/Logo.png' %}" alt="Logo de chATI" id="LPLogo">
         <div class="LPHDiv">
-            <a href="#" id="LPGlobe" onclick="toggleMobilePopup()"></a>
+            <a href="#" id="LPGlobe" onclick="toggleMobilePopup(event)"></a>
             <a href="{% url 'login' %}" id="LPLogin">INICIAR SESIÓN</a>
             <a href="{% url 'signin' %}" id="LPSignin">REGISTRATE</a>
 
-            <div id="LPMobilePopup" class="mobile-popup hidden">
+            <div id="MobilePopup" class="mobile-popup hidden">
               <a href="{% url 'login' %}">INICIAR SESIÓN</a>
               <a href="{% url 'signin' %}">REGISTRATE</a>
             </div>

@@ -7,6 +7,7 @@
     <title>chATI - Red Social para Estudiantes</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/Commentsstyle.css' %}">
+    <script src="{% static 'js/MobilePopup.js' %}"></script>
 </head>
 <body>
     <header>
@@ -37,8 +38,11 @@
             <div class="LogInProfile">
                 <a href="{% url 'feed-profile' %}" id="LogInProfileIcon"></a>
             </div>
-            <div class="LogInHome">
+            <div class="LogInHome" onclick="toggleMobilePopup(event)">
                 <a href="{% url 'feed' %}" id="LogInHomeIcon"></a>
+            </div>
+            <div id="MobilePopup" class="mobile-popup hidden">
+              <a href="{% url 'logout' %}">CERRAR SESIÓN</a>
             </div>
         </div>
     </header>

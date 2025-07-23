@@ -302,6 +302,29 @@ body{
 
 }
 
+.mobile-popup {
+  display: block;
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  background: #192229;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  padding: 10px;
+  z-index: 100;
+  border: 1px solid #A0A7AC;
+}
+
+.mobile-popup a {
+    margin: 0px 5px 0px 5px;
+    text-decoration: none;
+    color: #C8CDD0;
+}
+
+.hidden {
+  display: none !important;
+}
+
 /* Estilos responsive para móviles */
 @media (max-width: 768px) {
 
@@ -316,12 +339,15 @@ body{
     #LogInLogoutLink{
         display: none;
     }
-    .LogInDivLeft div:not(.LogInHome) {
+    .LogInDivLeft div:not(.LogInHome):not(.mobile-popup) {
         gap: 0px;
         display: none;
     }
     #LogInHomeIcon {
         background-image: url(../images/Home2.png);
+    }
+    .LogInLogout{
+      display: none;
     }
     .LogInLogoContainer {
     position: absolute;

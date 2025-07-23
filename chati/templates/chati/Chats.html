@@ -7,6 +7,7 @@
     <title>chATI - Red Social para Estudiantes</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/Chatsstyle.css' %}">
+    <script src="{% static 'js/MobilePopup.js' %}"></script>
 
 </head>
 <body>
@@ -38,8 +39,11 @@
             <div class="LogInProfile">
                 <a href="{% url 'feed-profile' %}" id="LogInProfileIcon"></a>
             </div>
-            <div class="LogInHome">
+            <div class="LogInHome" onclick="toggleMobilePopup(event)">
                 <a href="{% url 'feed' %}" id="LogInHomeIcon"></a>
+            </div>
+            <div id="MobilePopup" class="mobile-popup hidden">
+              <a href="{% url 'logout' %}">CERRAR SESIÓN</a>
             </div>
         </div>
     </header>
@@ -47,7 +51,7 @@
     <main class="PMain">
         <div id="MPfeed">
         <div class="ChatPost">
-            <a href="#" id="ChatSol">Solicitudes de chat (0)</a>
+            <a href="{% url 'feed-chat-request' %}" id="ChatSol">Solicitudes de chat (0)</a>
         </div>
           <div class="MPpost">
             <div class="MPpost-header">
