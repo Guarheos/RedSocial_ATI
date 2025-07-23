@@ -106,18 +106,16 @@
 }
 
 .mobile-popup a {
-    font-weight: bold;
-    margin: 0px 5px 0px 5px;
+    margin: 0[p];
     text-decoration: none;
     color: #C8CDD0;
 }
 
-@media (min-width: 769px) {
-  /* Forzar ocultamiento en desktop */
-  #LPMobilePopup {
+
+#LPMobilePopup {
     display: none !important;
-  }
 }
+
 
 /* --- Estilos para Móvil --- */
 @media (max-width: 768px) {
@@ -151,13 +149,13 @@
     }
 
     #LPSN {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #52A5E0;
-    margin-bottom: -10px;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #2a3b47;
-    display: inline-block;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #52A5E0;
+        margin-bottom: -10px;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #2a3b47;
+        display: inline-block;
     }
 
     #LPSNT {
