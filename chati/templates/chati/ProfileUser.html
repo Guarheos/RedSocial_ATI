@@ -61,7 +61,7 @@
                          {% if profile.profile_picture_url %}
                          style="background-image: url('{{ profile.profile_picture_url }}')"
                          {% else %}
-                         style="background-image: url('{% static 'images/default-avatar.png' %}')"
+                         style="background-image: url('{% static 'images/DefaultUser.png' %}')"
                          {% endif %}>
                     </div>
                     
@@ -74,9 +74,11 @@
                             <p class="PUusername">@{{ profile.user.username }}</p>
                             
                             <div class="PUButtons-row">
-                                <!-- Botón para editar perfil -->
-                                <a href="{% url 'feed-profile-edit_user' %}" class="PUEditarPerfil">Editar perfil</a>
-                                <button class="PUMessage"></button>
+                                {% if is_own_profile %}
+                                    <a href="{% url 'feed-profile-edit_user' %}" class="PUEditarPerfil">Editar perfil</a>
+                                {% else %}
+                                    <button class="PUMessage"></button>
+                                {% endif %}
                             </div>
                         </div>
                         
@@ -117,7 +119,7 @@
                          {% if profile.profile_picture_url %}
                          style="background-image: url('{{ profile.profile_picture_url }}')"
                          {% else %}
-                         style="background-image: url('{% static 'images/default-avatar.png' %}')"
+                         style="background-image: url('{% static 'images/DefaultHeader.png' %}')"
                          {% endif %}>
                     </div>
                     

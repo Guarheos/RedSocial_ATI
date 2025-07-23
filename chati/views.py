@@ -137,7 +137,10 @@ def profile(request):
         'posts_count': posts_count,
         'comments_count': comments_count,
         'user_posts': user_posts,
+        'is_own_profile': request.user == user_profile.user, 
     }
+
+
     
     return render(request, "chati/ProfileUser.html", context)
 
