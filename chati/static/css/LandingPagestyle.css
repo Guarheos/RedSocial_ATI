@@ -88,6 +88,37 @@
     color: #52A5E0;
 }
 
+
+.hidden {
+  display: none;
+}
+
+.mobile-popup {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  background: #192229;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  padding: 10px;
+  z-index: 100;
+  border: 1px solid #A0A7AC;
+}
+
+.mobile-popup a {
+    font-weight: bold;
+    margin: 0px 5px 0px 5px;
+    text-decoration: none;
+    color: #C8CDD0;
+}
+
+@media (min-width: 769px) {
+  /* Forzar ocultamiento en desktop */
+  #LPMobilePopup {
+    display: none !important;
+  }
+}
+
 /* --- Estilos para Móvil --- */
 @media (max-width: 768px) {
     .LPmain-container {
