@@ -15,6 +15,7 @@ from .forms import (
     CustomSetPasswordForm,
     ProfileEditForm
 )
+from .forms import PostForm
 
 # Manejo de formas
 def index(request):
@@ -176,10 +177,20 @@ def friends(request):
     )
     return render(request, "chati/Friends.html", {'friendships': friendships})
 
-def post(request, post_id):
-    post = get_object_or_404(Post, id=post_id)
-    comments = Comment.objects.filter(post=post).order_by('comment_date')
-    return render(request, "chati/Publication.html", {'post': post, 'comments': comments})
+@login_required
+def post(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            new_post = form.save(commit=False)
+            new_post.user = request.user
+            new_post.save()
+            messages.success(request, "¡Publicación creada exitosamente!")
+            return redirect('feed')
+    else:
+        form = PostForm()
+    
+    return render(request, "chati/Publication.html", {'form': form})
 
 def chatting(request, chat_id):
     chat = get_object_or_404(Chat, id=chat_id)

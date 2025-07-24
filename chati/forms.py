@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordResetForm, SetPasswordForm
 from django.contrib.auth.models import User
-from .models import Profile, Settings
+from .models import Profile, Settings, Post
 from django.contrib.auth.models import User 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -143,3 +143,23 @@ class ProfileEditForm(forms.ModelForm):
             user.save()
             profile.save()
         return profile
+    
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ['text_content', 'media_url']
+        widgets = {
+            'text_content': forms.Textarea(attrs={
+                'placeholder': '¿Qué deseas publicar?',
+                'rows': 3,
+                'class': 'PubTextarea'
+            }),
+            'media_url': forms.URLInput(attrs={
+                'class': 'hidden',  # Oculto, se manejará con JavaScript
+                'id': 'media-url-input'
+            })
+        }
+        labels = {
+            'text_content': '',
+            'media_url': ''
+        }

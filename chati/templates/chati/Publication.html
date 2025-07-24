@@ -46,25 +46,25 @@
     </header>
 
     <main class="PubMain">
-        <section class="PubBox">
+    <section class="PubBox">
+        <form method="post" action="{% url 'feed-post' %}">
+            {% csrf_token %}
             <div class="PubPreview" id="PubPreview">
                 <span class="PubPreviewPlaceholder">Vista previa de la publicación...</span>
-              </div>
-          <div class="PubTop">
-            <textarea 
-              placeholder="¿Qué deseas publicar?" 
-              class="PubTextarea" 
-              rows="3"></textarea>
-            <button class="PubSend">PUBLICAR</button>
-          </div>
-      
-          <div class="PubTools">
-            <button class="PubBtnEmoji" title="Agregar Emoji"></button>
-            <button class="PubBtnPhoto" title="Subir Imagen"></button>
-            <button class="PubBtnFile" title="Adjuntar Archivo"></button>
-          </div>
-        </section>
-      </main>
+            </div>
+            <div class="PubTop">
+                {{ form.text_content }}
+                <button type="submit" class="PubSend">PUBLICAR</button>
+            </div>
+            <div class="PubTools">
+                <button type="button" class="PubBtnEmoji" title="Agregar Emoji"></button>
+                <button type="button" class="PubBtnPhoto" title="Subir Imagen" id="upload-photo"></button>
+                <button type="button" class="PubBtnFile" title="Adjuntar Archivo" id="upload-file"></button>
+            </div>
+            {{ form.media_url }}
+        </form>
+    </section>
+</main>
       
       
       <footer class="MobileFooter">
@@ -82,9 +82,35 @@
                 <a href="{% url 'feed-notifications' %}" id="MobileLikeIcon"></a>
             </div>
             <div class="MobileProfile">
-                <a href="{% url 'feed-profile' %}" id="MobileProfileIcon"></a>
+                <a href="{% url 'own-profile' %}" id="MobileProfileIcon"></a>
             </div>
         </div>
     </footer>
 </body>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const textarea = document.querySelector('.PubTextarea');
+    const preview = document.getElementById('PubPreview');
+    
+    // Actualizar vista previa
+    textarea.addEventListener('input', function() {
+        preview.textContent = this.value || "Vista previa de la publicación...";
+    });
+    
+    // Manejar subida de imágenes (ejemplo con Cloudinary)
+    document.getElementById('upload-photo').addEventListener('click', function() {
+        cloudinary.openUploadWidget({ 
+            cloudName: 'tu_cloud', 
+            uploadPreset: 'tu_preset',
+            sources: ['local', 'url']
+        }, (error, result) => {
+            if (!error && result && result.event === "success") {
+                document.getElementById('media-url-input').value = result.info.secure_url;
+                preview.innerHTML += `<img src="${result.info.secure_url}" width="100">`;
+            }
+        });
+    });
+});
+</script>
 </html>

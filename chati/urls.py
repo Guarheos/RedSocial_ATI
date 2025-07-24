@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path("feed", views.main, name='feed'),
     path("login", views.log_in, name='login'),
     path("logout", views.log_out, name='logout'),
     path("login/password_recover", views.recover_pass, name='password_recover'),
@@ -28,13 +29,16 @@ urlpatterns = [
      path("feed/profile/<str:username>/", views.profile, name='profile'),
      path("feed/profile/edit_user", views.edit_user, name="feed-profile-edit_user"),
 
-    path("feed", views.main, name='feed'),
     path("feed/chats", views.chats, name="feed-chat"),
     path("feed/chats/request", views.chat_request, name="feed-chat-request"),
     path("feed/chat-user", views.chatting, name="feed-chat-user"),
     path("feed/friends", views.friends, name="feed-friends"),
     path("feed/notifications", views.notification, name="feed-notifications"),
-    path("feed/post", views.post, name="feed-post"),
+
+    # Publicaciones
+    path("feed/post", views.post, name="feed-post"),  # Crear publicación
+    # path("feed/post/<int:post_id>", views.view_post, name='post'),  # Ver publicación existente
+
     path("feed/post/comment", views.comment, name="feed-post-comment"),
 
     path('admin/', admin.site.urls),
