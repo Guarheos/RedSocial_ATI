@@ -87,9 +87,13 @@
                     <span class="count">{{ post.comment_set.count }}</span>
                 </span>
                 <!-- Agregar funcionalidad de likes si es necesario -->
-                <span class="likes">
+                <span class="likes" id="likeBtn">
                     <img src="{% static 'images/Heart.png' %}" alt="Me gusta" class="icon">
                     <span class="count">0</span>
+                </span>
+
+                <span class="share" id="shareBtn">
+                  <img src="{% static 'images/Share.png' %}" alt="Compartir" class="icon"> <span class="count" id="shareCount">0</span>
                 </span>
             </div>
         </div>
