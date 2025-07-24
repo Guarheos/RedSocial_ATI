@@ -16,6 +16,7 @@ from .forms import (
     ProfileEditForm
 )
 from .forms import PostForm
+from django.http import JsonResponse
 
 # Manejo de formas
 def index(request):
@@ -210,6 +211,27 @@ def notification(request):
 def comment(request):
 	return render(request, "chati/Comments.html")
 
+def buscar_usuarios(request):
+    q = request.GET.get('q', '')
+    usuarios = User.objects.filter(username__startswith=q)[:5]
+
+    data = []
+    for u in usuarios:
+        profile = getattr(u, 'profile', None)
+        profile_pic_url = profile.profile_picture_url if profile and profile.profile_picture_url else ""
+
+        data.append({
+            "username": u.username,
+            "profile_pic": profile_pic_url
+        })
+
+    return JsonResponse(data, safe=False)
+
+
+
+    
+
+    
 
 @login_required
 def log_out(request):

@@ -41,5 +41,8 @@ urlpatterns = [
 
     path("feed/post/comment", views.comment, name="feed-post-comment"),
 
+    path('buscar_usuarios/', views.buscar_usuarios, name='buscar_usuarios'),
+
+
     path('admin/', admin.site.urls),
 ]

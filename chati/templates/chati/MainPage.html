@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/MainPagestyle.css' %}">
     <script src="{% static 'js/MobilePopup.js' %}"></script>
     <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <script src="{% static 'js/SearchPopUp.js' %}"></script>
 
 </head>
 <body>
@@ -16,6 +17,12 @@
         <div class="LogInDivRight">
             <div class="LogInSearch">
                 <a href="#" id="LogInSearchIcon"></a>
+            </div>
+            <div id="popupSearch" style="display:none;" class="popup-container">
+                <div class="popup-content">
+                    <input type="text" id="userSearchInput" placeholder="Buscar usuarios..." />
+                    <ul id="searchResults"></ul>
+                </div>
             </div>
             <div class="LogInGlobe">
                 <a href="#" id="LogInGlobeIcon"></a>

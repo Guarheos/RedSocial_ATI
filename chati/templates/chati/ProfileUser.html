@@ -8,12 +8,19 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/ProfileUserstyle.css' %}">
     <script src="{% static 'js/MobilePopup.js' %}"></script>
+    <script src="{% static 'js/SearchPopUp.js' %}"></script>
 </head>
 <body>
     <header>
          <div class="LogInDivRight">
             <div class="LogInSearch">
                 <a href="#" id="LogInSearchIcon"></a>
+            </div>
+            <div id="popupSearch" style="display:none;" class="popup-container">
+                <div class="popup-content">
+                    <input type="text" id="userSearchInput" placeholder="Buscar usuarios..." />
+                    <ul id="searchResults"></ul>
+                </div>
             </div>
             <div class="LogInBack">
                 <a href="{% url 'feed' %}" id="LogInBackIcon"></a>
