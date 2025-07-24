@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import PasswordResetConfirmView, PasswordResetCompleteView
+from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
 from django.db.models import Q, Count
 from django.contrib.auth.models import User 
@@ -101,13 +102,32 @@ def edit_user(request):
     if request.method == 'POST':
         form = ProfileEditForm(request.POST, instance=profile)
         if form.is_valid():
+            # Guardar cambios en perfil y usuario
             form.save()
+            
+            # Manejar cambio de contraseña opcional
+            new_password = request.POST.get('new_password')
+            confirm_password = request.POST.get('confirm_password')
+            
+            if new_password and confirm_password:
+                if new_password == confirm_password:
+                    request.user.set_password(new_password)
+                    request.user.save()
+                    # Actualizar sesión para evitar logout
+                    update_session_auth_hash(request, request.user)
+                    messages.success(request, "Contraseña actualizada exitosamente")
+                else:
+                    messages.error(request, "Las contraseñas no coinciden")
+            
             messages.success(request, "Perfil actualizado exitosamente")
-            return redirect('profile')
+            return redirect('profile', username=request.user.username)
+        else:
+            # Mostrar errores de validación
+            messages.error(request, "Por favor corrige los errores en el formulario")
     else:
         form = ProfileEditForm(instance=profile)
+    
     return render(request, "chati/EditProfile.html", {'form': form})
-
  
 # Metodos de renderizados dinamico
 

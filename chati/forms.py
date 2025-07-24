@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordResetForm, SetPasswordForm
 from django.contrib.auth.models import User
-from .models import Profile
+from .models import Profile, Settings
 from django.contrib.auth.models import User 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -67,47 +67,77 @@ class CustomSetPasswordForm(SetPasswordForm):
         }))
 
 class ProfileEditForm(forms.ModelForm):
-    first_name = forms.CharField(required=False, widget=forms.TextInput(attrs={
-        'class': 'form-control',
-        'placeholder': 'Nombre'
-    }))
-    last_name = forms.CharField(required=False, widget=forms.TextInput(attrs={
-        'class': 'form-control',
-        'placeholder': 'Apellido'
-    }))
-    email = forms.EmailField(widget=forms.EmailInput(attrs={
-        'class': 'form-control',
-        'placeholder': 'Correo electrónico'
-    }))
+    # Campos para el modelo User
+    first_name = forms.CharField(
+        required=False,
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Nombre'
+        }))
+    last_name = forms.CharField(
+        required=False,
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Apellido'
+        }))
+    email = forms.EmailField(
+        widget=forms.EmailInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Correo electrónico'
+        }))
+    username = forms.CharField(
+        required=True,
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Nombre de usuario'
+        }))
+    
+    # Campo para el modelo Settings
+    profile_visibility = forms.ChoiceField(
+        choices=Settings.VISIBILITY_CHOICES,
+        widget=forms.Select(attrs={'class': 'form-control'}),
+        required=True
+    )
     
     class Meta:
         model = Profile
-        fields = ['bio', 'profile_picture_url', 'first_name', 'last_name', 'email']
-        widgets = {
-            'bio': forms.Textarea(attrs={
-                'class': 'form-control',
-                'placeholder': 'Biografía',
-                'rows': 3
-            }),
-            'profile_picture_url': forms.URLInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'URL de la foto de perfil'
-            }),
-        }
+        fields = ['bio', 'profile_picture_url']  # Solo campos del modelo Profile
     
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        if self.instance.user:
+        # Asegurarse de que los campos existan antes de asignar valores iniciales
+        self.fields.setdefault('first_name', forms.CharField())
+        self.fields.setdefault('last_name', forms.CharField())
+        self.fields.setdefault('email', forms.EmailField())
+        self.fields.setdefault('username', forms.CharField())
+        self.fields.setdefault('profile_visibility', forms.ChoiceField())
+        
+        if self.instance and self.instance.user:
+            # Inicializar campos de User
             self.fields['first_name'].initial = self.instance.user.first_name
             self.fields['last_name'].initial = self.instance.user.last_name
             self.fields['email'].initial = self.instance.user.email
+            self.fields['username'].initial = self.instance.user.username
+            
+            # Inicializar visibilidad
+            if hasattr(self.instance.user, 'settings'):
+                self.fields['profile_visibility'].initial = self.instance.user.settings.profile_visibility
 
     def save(self, commit=True):
         profile = super().save(commit=False)
         user = profile.user
+        
+        # Actualizar campos de User
         user.first_name = self.cleaned_data['first_name']
         user.last_name = self.cleaned_data['last_name']
         user.email = self.cleaned_data['email']
+        user.username = self.cleaned_data['username']
+        
+        # Guardar configuración de visibilidad
+        if hasattr(user, 'settings'):
+            user.settings.profile_visibility = self.cleaned_data['profile_visibility']
+            if commit:
+                user.settings.save()
         
         if commit:
             user.save()

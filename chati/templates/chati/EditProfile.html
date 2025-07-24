@@ -48,34 +48,57 @@
         </div>
     </header>
 
-    <main class="PMain">
-        <h1 id="EPMainTitle">Editar perfil</h1>
-        <div class="EPform-container">
-            <div class="EPFInputs">            
+<main class="PMain">
+    <h1 id="EPMainTitle">Editar perfil</h1>
+    <div class="EPform-container">
+        <form method="post">
+            {% csrf_token %}
+            <div class="EPFInputs">
+                {% if form.errors or messages %}
+                    <div class="error-messages">
+                        {% for field, errors in form.errors.items %}
+                            {% for error in errors %}
+                                <p class="error">{{ error }}</p>
+                            {% endfor %}
+                        {% endfor %}
+                        {% for message in messages %}
+                            <p class="{{ message.tags }}">{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                
                 <p id="EPFNombre">Nombre</p>
-                <input type="text">
+                {{ form.first_name }}
+                
                 <p id="EPFApellido">Apellido</p>
-                <input type="text">
+                {{ form.last_name }}
+                
                 <p id="EPFEmail">Correo electrónico</p>
-                <input type="email">
+                {{ form.email }}
+                
                 <p id="EPFUsername">Nombre de usuario</p>
-                <input type="text">
-                <p id="EPFPassword">Contraseña</p>
-                <input type="password">
+                {{ form.username }}
+                
+                <p id="EPFPassword">Nueva contraseña (opcional)</p>
+                <input type="password" name="new_password" class="form-control" placeholder="Nueva contraseña">
+                
                 <p id="EPFConPassword">Confirmar contraseña</p>
-                <input type="password">
+                <input type="password" name="confirm_password" class="form-control" placeholder="Confirmar nueva contraseña">
+                
+                <p>Biografía</p>
+                {{ form.bio }}
+                
+                <p>URL de la foto de perfil</p>
+                {{ form.profile_picture_url }}
             </div>
             <div class="EPPProfile">
                 <span id="EPSpanPProfile">Perfil privado</span>
-                <label class="EPswitch">
-                    <input type="checkbox">
-                    <span class="EPslider"></span>
-                  </label>
+                {{ form.profile_visibility }}
             </div>
-            
-            <button>ACEPTAR</button>
-          </div>
-    </main>
+            <button type="submit">ACEPTAR</button>
+        </form>
+    </div>
+</main>
 
     <footer class="MobileFooter">
         <div class="MobileDiv">
@@ -92,7 +115,7 @@
                 <a href="{% url 'feed-notifications' %}" id="MobileLikeIcon"></a>
             </div>
             <div class="MobileProfile">
-                <a href="{% url 'feed-profile' %}" id="MobileProfileIcon"></a>
+                <a href="{% url 'feed' %}" id="MobileProfileIcon"></a>
             </div>
         </div>
     </footer>
