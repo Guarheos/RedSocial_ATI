@@ -39,13 +39,10 @@
             <div class="LogInProfile">
                 <a href="{% url 'own-profile' %}" id="LogInProfileIcon"></a>
             </div>
-            <div class="LogInHome" onclick="toggleMobilePopup(event)">
-                <a href="{% url 'feed' %}" id="LogInHomeIcon" data-feed="{% url 'feed' %}"></a>
+            <div class="LogInHome">
+                <a href="{% url 'feed' %}" id="LogInHomeIcon"></a>
             </div>
-            <div id="MobilePopup" class="mobile-popup hidden">
-              <a href="{% url 'logout' %}">CERRAR SESIÓN</a>
-            </div>
-        </div>
+       </div>
     </header>
 
     <main class="PubMain">

@@ -39,14 +39,11 @@
             <div class="LogInProfile">
                 <a href="{% url 'own-profile' %}" id="LogInProfileIcon"></a>
             </div>
-            <div class="LogInHome" onclick="toggleMobilePopup(event)">
-                <a href="{% url 'feed' %}" id="LogInHomeIcon" data-feed="{% url 'feed' %}"></a>
+            <div class="LogInHome">
+                <a href="{% url 'feed' %}" id="LogInHomeIcon"></a>
             </div>
-            <div id="MobilePopup" class="mobile-popup hidden">
-              <a href="{% url 'logout' %}">CERRAR SESIÓN</a>
-            </div>
-        </div>
-    </header>
+       </div>
+    <header>
 
 <main class="PMain">
     <h1 id="EPMainTitle">Editar perfil</h1>
