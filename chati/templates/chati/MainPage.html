@@ -53,35 +53,50 @@
        </div>
     </header>
 
-    <main class="PMain">
-        <div id="MPfeed">
-          <div class="MPpost">
+<main class="PMain">
+    <div id="MPfeed">
+        {% for post in posts %}
+        <div class="MPpost">
             <div class="MPpost-header">
-              <div class="MPUserPhoto"></div>
-              <div class="MPUserInfo">
-                <strong class="MPpostUser"> Usuario </strong>
-                <span class="MPpostUserdate"> · Ene 01</span>
-              </div>
+                <a href="{% url 'profile' username=post.user.username %}">
+                    {% if post.user.profile.profile_picture_url %}
+                        <img src="{{ post.user.profile.profile_picture_url }}" 
+                             alt="Foto de perfil" 
+                             class="MPUserPhoto">
+                    {% else %}
+                        <div class="MPUserPhoto"></div>
+                    {% endif %}
+                </a>
+                <div class="MPUserInfo">
+                    <strong class="MPpostUser">{{ post.user.username }}</strong>
+                    <span class="MPpostUserdate"> · {{ post.post_date|date:"M d" }}</span>
+                </div>
             </div>
-      
-            <p class="MPpost-content">Hola!</p>
-      
-            <div class="MPpost-media"></div>
-      
+            
+            <p class="MPpost-content">{{ post.text_content }}</p>
+            
+            {% if post.media_url %}
+            <div class="MPpost-media">
+                <img src="{{ post.media_url }}" alt="Media publicación" style="max-width: 100%">
+            </div>
+            {% endif %}
+            
             <div class="MPpost-actions">
                 <span class="comments">
-                  <img src="{% static 'images/Chat.png' %}" alt="Comentarios" class="icon"> <span class="count" id="commentCount">2</span>
+                    <img src="{% static 'images/Chat.png' %}" alt="Comentarios" class="icon">
+                    <span class="count">{{ post.comment_set.count }}</span>
                 </span>
-                <span class="likes" id="likeBtn">
-                  <img src="{% static 'images/Heart.png' %}" alt="Me gusta" class="icon"> <span class="count" id="likeCount">2</span>
+                <!-- Agregar funcionalidad de likes si es necesario -->
+                <span class="likes">
+                    <img src="{% static 'images/Heart.png' %}" alt="Me gusta" class="icon">
+                    <span class="count">0</span>
                 </span>
-                <span class="share" id="shareBtn">
-                  <img src="{% static 'images/Share.png' %}" alt="Compartir" class="icon"> <span class="count" id="shareCount">0</span>
-                </span>
-              </div>
-          </div>
+            </div>
         </div>
-      </main>
+        {% endfor %}
+    </div>
+</main>
+
       <footer class="MobileFooter">
         <div class="MobileDiv">
             <div class="MobileHome">
