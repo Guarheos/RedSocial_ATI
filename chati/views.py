@@ -120,6 +120,8 @@ def own_profile(request):
     """Redirige al perfil del usuario actual"""
     return redirect('profile', username=request.user.username)
 
+# Para ver perfiles de terceros usar:
+# <a href="{% url 'profile' username=post.user.username %}">
 @login_required
 def profile(request, username):
     """Muestra el perfil de cualquier usuario por nombre de usuario"""
