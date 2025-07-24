@@ -2,6 +2,7 @@
 from django.urls import path
 from . import views
 from django.contrib import admin
+from django.contrib.auth.models import User 
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -19,17 +20,19 @@ urlpatterns = [
     # path("login/password_recover/change_pass", views.change_pass),
     # path("chati/edit_profile/change_pass", views.change_pass),
 
-    path("feed/profile/<int:user_id>", views.profile, name='profile'),
     path("feed/post/<int:post_id>", views.post, name='post'),
     path("feed/chat-user/<int:chat_id>", views.chatting, name='chatting'),
+
+     # Perfiles
+     path("feed/profile/", views.own_profile, name='own-profile'),
+     path("feed/profile/<str:username>/", views.profile, name='profile'),
+     path("feed/profile/edit_user", views.edit_user, name="feed-profile-edit_user"),
 
     path("feed", views.main, name='feed'),
     path("feed/chats", views.chats, name="feed-chat"),
     path("feed/chats/request", views.chat_request, name="feed-chat-request"),
     path("feed/chat-user", views.chatting, name="feed-chat-user"),
     path("feed/friends", views.friends, name="feed-friends"),
-    path("feed/profile", views.profile, name="feed-profile"),
-    path("feed/profile/edit_user", views.edit_user, name="feed-profile-edit_user"),
     path("feed/notifications", views.notification, name="feed-notifications"),
     path("feed/post", views.post, name="feed-post"),
     path("feed/post/comment", views.comment, name="feed-post-comment"),

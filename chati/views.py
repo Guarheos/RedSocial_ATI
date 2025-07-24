@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import PasswordResetConfirmView, PasswordResetCompleteView
 from django.contrib import messages
 from django.db.models import Q, Count
+from django.contrib.auth.models import User 
 from .models import Profile, Post, Comment, Friendship, Chat, Message
 from .forms import (
     CustomUserCreationForm, 
@@ -115,21 +116,25 @@ def main(request):
     return render(request, "chati/MainPage.html", {'posts': posts})
 
 @login_required
-def profile(request):
-    user_profile = get_object_or_404(Profile, user=request.user)
+def own_profile(request):
+    """Redirige al perfil del usuario actual"""
+    return redirect('profile', username=request.user.username)
+
+@login_required
+def profile(request, username):
+    """Muestra el perfil de cualquier usuario por nombre de usuario"""
+    user = get_object_or_404(User, username=username)
+    user_profile = get_object_or_404(Profile, user=user)
     
     # Calcular estadísticas
     friends_count = Friendship.objects.filter(
-        (Q(requester=request.user) | Q(receiver=request.user)),
+        (Q(requester=user) | Q(receiver=user)),
         status='accepted'
     ).count()
     
-    posts_count = Post.objects.filter(user=request.user).count()
-    
-    comments_count = Comment.objects.filter(user=request.user).count()
-    
-    # Obtener publicaciones del usuario
-    user_posts = Post.objects.filter(user=request.user).order_by('-post_date')
+    posts_count = Post.objects.filter(user=user).count()
+    comments_count = Comment.objects.filter(user=user).count()
+    user_posts = Post.objects.filter(user=user).order_by('-post_date')
     
     context = {
         'profile': user_profile,
@@ -137,10 +142,8 @@ def profile(request):
         'posts_count': posts_count,
         'comments_count': comments_count,
         'user_posts': user_posts,
-        'is_own_profile': request.user == user_profile.user, 
+        'is_own_profile': (request.user == user),
     }
-
-
     
     return render(request, "chati/ProfileUser.html", context)
 
