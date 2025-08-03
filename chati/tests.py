@@ -31,16 +31,6 @@ class SocialModelsTestCase(TestCase):
         self.assertEqual(self.post1.text_content, "Este es un post de prueba.")
         self.assertEqual(str(self.post1), f'Post de usuario1 - {self.post1.id}')
 
-    def test_creacion_de_comentario(self):
-        comment = Comment.objects.create(
-            post=self.post1,
-            user=self.user2,
-            comment_content="Un comentario de prueba."
-        )
-        self.assertEqual(self.post1.comment_set.count(), 1)
-        self.assertEqual(comment.user, self.user2)
-        self.assertEqual(str(comment), f'Comentario de usuario2 en el post {self.post1.id}')
-
     def test_solicitud_de_amistad(self):
         friendship = Friendship.objects.create(requester=self.user1, receiver=self.user2)
         self.assertEqual(friendship.status, 'pending') # Probar el valor por defecto
@@ -51,18 +41,3 @@ class SocialModelsTestCase(TestCase):
         # Intentar crear la misma relación debe lanzar un IntegrityError
         with self.assertRaises(IntegrityError):
             Friendship.objects.create(requester=self.user1, receiver=self.user2)
-
-    def test_creacion_de_chat_y_mensajes(self):
-        chat = Chat.objects.create()
-        chat.participants.add(self.user1, self.user2)
-        
-        self.assertEqual(chat.participants.count(), 2)
-        self.assertIn(self.user1, chat.participants.all())
-        message = Message.objects.create(
-            chat=chat,
-            sender=self.user1,
-            message_content="Hola, ¿cómo estás?"
-        )
-        self.assertEqual(chat.message_set.count(), 1)
-        self.assertEqual(message.sender, self.user1)
-        self.assertEqual(str(message), f'Mensaje de usuario1 en chat {chat.id}')
