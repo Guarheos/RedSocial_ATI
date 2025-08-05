@@ -45,6 +45,8 @@
   align-items: center;
   font-size: 14px;
   padding: 10px;
+  margin-bottom: 18px; 
+
 }
 
 .PubPreviewPlaceholder {
@@ -54,8 +56,8 @@
 .PubTop {
     display: flex;
     align-items: stretch;
-     gap: 8px;
-  height: 45px;
+    gap: 8px;
+    height: 45px;
 }
 
 .PubTextarea {
