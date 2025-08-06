@@ -103,6 +103,42 @@
     background-color: #f0f0f0;
 }
 
+/* Estilo para los enlaces que actúan como botones */
+.LNform-container a.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.LNform-container a.button:not(#LNRButtonsRC) {
+  background-color: #52A5E0;
+  color: white;
+  border: none;
+}
+.LNform-container a.button:not(#LNRButtonsRC):hover {
+  background-color: #2980b9;
+}
+
+#LNRButtonsRC {
+  background-color: #ffffff;
+  color: black;
+  border: 1px solid #bdc3c7;
+}
+#LNRButtonsRC:hover {
+  background-color: #f0f0f0;
+}
+
+
 @media (max-width: 768px) {
     .LNform-container {
         padding: 30px 25px;

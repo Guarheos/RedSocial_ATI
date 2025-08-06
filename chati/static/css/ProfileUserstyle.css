@@ -12,6 +12,33 @@ body, html {
   --font-body: 'Segoe UI', sans-serif;
 }
 
+.PUSendRequest {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-left: 10px;
+}
+
+.PUSendRequest:hover {
+  background-color: var(--hover-accent);
+}
+
+.PUSendRequest:active {
+  background-color: #2f6d99;
+}
+
+
+.PUno-posts {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
 .PUprofile, .PUprofile-info {
   box-sizing: border-box;
   max-width: 100%;
@@ -73,6 +100,11 @@ body, html {
   z-index: 4;
 }
 
+.PUbio-section {
+  margin-top: 10px;
+  padding: 0 16px;
+}
+
 .PUname-section {
   margin-left: 150px;
   margin-top: 20px;
@@ -92,14 +124,12 @@ body, html {
 
 .PUButtons {
   display: flex;
-  align-items: center;
-  gap: 12px;
 }
 
 .PUButtons-row {
+  
   display: flex;
-  gap: 12px;
-  margin-left: auto; 
+  margin-left: 10px;
   align-items: center;
 }
 
@@ -141,6 +171,7 @@ body, html {
 
 .PUstat {
   text-align: center;
+  margin-right: 10px;
 }
 
 .PUstat strong {
