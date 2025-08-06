@@ -10,6 +10,58 @@ header {
     min-height: 40px;
 }
 
+:root {
+  --accent-color: #52A5E0;
+}
+
+#userSearchInput {
+  width: 220px;           
+  max-width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #A0A7AC;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #192229;
+  color: #fff;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+  position: relative;
+  z-index: 1001;
+}
+
+#userSearchInput:hover {
+  border-color: var(--accent-color, #52A5E0);
+  background-color: rgba(82,165,224,0.03);
+  cursor: text; 
+}
+
+#userSearchInput:focus {
+  border-color: var(--accent-color, #52A5E0);
+}
+
+#popupSearch ul#searchResults li {
+  list-style: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+#popupSearch ul#searchResults li:hover,
+#popupSearch ul#searchResults li:focus-within {
+  background-color: rgba(82,165,224,0.2);
+}
+
+#popupSearch ul#searchResults li a.search-result-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+#popupSearch ul#searchResults li:hover a.search-result-link,
+#popupSearch ul#searchResults li:focus-within a.search-result-link {
+  color: #52A5E0;
+}
+
 body{
     margin: 0;
     padding: 0;
