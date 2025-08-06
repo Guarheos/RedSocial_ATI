@@ -14,13 +14,15 @@
   font-size: 15px;
 } 
 
+
 .PubMain {
   width: 50%;
-  height: calc(100vh - 95px);
+  min-height: calc(100vh - 95px); 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; 
   margin: auto;
+  padding-top: 20px;
   font-family: var(--font-body);
 }
 
@@ -28,15 +30,16 @@
   background-color: var(--main-bg);
   padding: 16px;
   border-radius: 10px;
-   width: 80%; 
-  height: 80%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  height: auto; 
+  margin-top: 30px;
 }
 
 .PubPreview {
-  flex: 1;
+  flex: 1; 
   background-color: var(--secondary-bg);
   border-radius: 8px;
   color: #7f8c8d;
@@ -45,9 +48,46 @@
   align-items: center;
   font-size: 14px;
   padding: 10px;
-  margin-bottom: 18px; 
-  min-height: 380px;
+  margin-bottom: 10px; 
+  min-height: 200px;
+  max-height: 400px; 
+  overflow-y: auto;
 }
+
+.PubTop {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.PubTextarea {
+  flex: 1;
+  resize: none;
+  color: #7f8c8d;
+  border: none;
+  background-color: var(--secondary-bg);
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  outline: none;
+  box-sizing: border-box;
+  min-height: 40px;
+  max-height: 200px; 
+  overflow-y: auto;
+}
+
+.PubSend {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+
 
 .PubPreviewPlaceholder {
   text-align: center;
@@ -58,30 +98,7 @@
     align-items: stretch;
     gap: 8px;
     height: 45px;
-    margin-bottom: 5px; 
-}
-
-.PubTextarea {
-    flex: 1;
-    resize: none;
-    color: #7f8c8d;
-    border: none;
-    background-color: var(--secondary-bg);
-    font-size: 14px;
-    padding: 10px 12px;
-    border-radius: 6px;
-    outline: none;
-}
-
-.PubSend {
-    background-color: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 0 24px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.2s ease;
+    margin-bottom: 8px; 
 }
 
 .PubSend:hover {

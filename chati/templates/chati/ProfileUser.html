@@ -22,9 +22,9 @@
                     <ul id="searchResults"></ul>
                 </div>
             </div>
-            <div class="LogInBack">
+           <!-- <div class="LogInBack">
                 <a href="{% url 'feed' %}" id="LogInBackIcon"></a>
-            </div>
+            </div>-->
            <div class="LogInGlobe">
                 <a href="#" id="LogInGlobeIcon"></a>
             </div>
@@ -124,7 +124,7 @@
                          {% if profile.profile_picture_url %}
                          style="background-image: url('{{ profile.profile_picture_url }}')"
                          {% else %}
-                         style="background-image: url('{% static 'images/DefaultHeader.png' %}')"
+                         style="background-image: url('{% static 'images/DefaultUser.png' %}')"
                          {% endif %}>
                     </div>
                     

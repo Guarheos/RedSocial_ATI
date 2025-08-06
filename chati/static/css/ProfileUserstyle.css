@@ -12,6 +12,14 @@ body, html {
   --font-body: 'Segoe UI', sans-serif;
 }
 
+header {
+    margin-bottom: 30px; 
+}
+
+body {  
+    padding-bottom: 60px; 
+}
+
 .PUSendRequest {
   background-color: var(--accent-color);
   color: white;
