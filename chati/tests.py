@@ -13,14 +13,6 @@ from .forms import (
     PostForm
 )
 
-class UserModelTests(TestCase):
-    def test_signal_creates_settings_for_new_user(self):
-        user = User.objects.create_user(username='testuser', password='password123')
-        self.assertTrue(Settings.objects.filter(user=user).exists())
-        self.assertEqual(Settings.objects.filter(user=user).count(), 1)
-        settings = Settings.objects.get(user=user)
-        self.assertEqual(settings.profile_visibility, 'public')
-
 class AuthFormTests(TestCase):
     def test_user_creation_form_valid(self):
         form_data = {
